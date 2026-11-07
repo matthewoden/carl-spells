@@ -268,16 +268,19 @@ test.describe('keyboard search on a desktop', () => {
   });
 });
 
-test('the editor shows it can be edited: a rule under the name and a resting cursor', async ({ page }) => {
+test('on a phone the editor waits for a tap; a rule under the name marks the field', async ({ page }) => {
   await page.goto('/spell/fireball');
-  const field = page.locator('.field');
-  expect(await field.evaluate((e) => getComputedStyle(e).borderBottomStyle)).toBe('solid');
-  // Zero width by design (so wrapping is unaffected); check it's displayed, not its box.
-  const shown = () => page.locator('.rest-caret').evaluate((e) => getComputedStyle(e).display !== 'none');
-  expect(await shown()).toBe(true);
-  await page.locator('#name').focus();
-  await expect.poll(shown).toBe(false);
-  // The cursor must not change how the name wraps.
-  const h = await page.$$eval('.mirror, #name', (els) => els.map((e) => Math.round(e.getBoundingClientRect().height)));
-  expect(h[1]).toBeGreaterThan(0);
+  expect(await page.locator('.field').evaluate((e) => getComputedStyle(e).borderBottomStyle)).toBe('solid');
+  await expect(page.locator('#name')).not.toBeFocused();
+});
+
+test.describe('editor on a desktop', () => {
+  test.use({ viewport: { width: 1280, height: 800 }, isMobile: false, hasTouch: false });
+
+  test('opens with the field focused and the caret at the end', async ({ page }) => {
+    await page.goto('/spell/fireball');
+    await expect(page.locator('#name')).toBeFocused();
+    await page.keyboard.type('s');
+    await expect(page.locator('#name')).toHaveValue('Fireballs');
+  });
 });

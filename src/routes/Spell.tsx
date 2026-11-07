@@ -87,6 +87,16 @@ function Editor({ spell, initial, game }: { spell: SpellRecord; initial: string;
   // Caret to restore after we rewrite the value (recase keeps the length, so it's stable).
   const caretRef = useRef<number | null>(null);
 
+  // With a mouse or trackpad, the field is ready to type into as soon as the editor opens,
+  // caret at the end. Touch screens skip this: iOS won't open the keyboard without a tap,
+  // and Android would cover half the card with it on every visit.
+  useEffect(() => {
+    const el = inputRef.current;
+    if (!el || !matchMedia('(pointer: fine)').matches) return;
+    el.focus({ preventScroll: true });
+    el.setSelectionRange(el.value.length, el.value.length);
+  }, []);
+
   useLayoutEffect(() => {
     const el = inputRef.current;
     if (el && caretRef.current !== null && document.activeElement === el) {
@@ -141,9 +151,6 @@ function Editor({ spell, initial, game }: { spell: SpellRecord; initial: string;
                 caret and selection with transparent text, wrapping identically. */}
             <div className="mirror" aria-hidden="true">
               <Highlighted text={value} changed={result.changed} />
-              {/* A resting cursor at the end says "this can be edited"; hidden while the real
-                  caret is showing (see Spell.css). */}
-              <span className="rest-caret" />
               {'\u200b'}
             </div>
             <textarea
