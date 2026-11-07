@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Carl — home, dark</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,600&amp;family=Alegreya:ital,wght@0,400;0,500;1,400&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:#FFF3D6;text-decoration:underline;text-underline-offset:3px;text-decoration-color:#9C8A6A}a:hover{color:#FFFFFF}
+.frame{position:relative;border:1px solid #E6D3AC;padding:16px;box-sizing:border-box;background:#120C18}
+.frame-in{border:0;box-sizing:border-box;height:100%}
+.c{width:8px;height:8px;border:1px solid #E6D3AC;position:absolute;box-sizing:border-box;pointer-events:none}
+.c::after,.c::before{content:"";position:absolute;box-sizing:border-box}
+.c::after{width:32px;height:15px}
+.c::before{width:15px;height:32px}
+.c-tl,.c-bl{left:-8px}.c-tl::after,.c-bl::after{left:14px;border-left:1px solid #E6D3AC}.c-tl::before,.c-bl::before{left:-1px;border-left:1px solid #E6D3AC}
+.c-tr,.c-br{right:-8px}.c-tr::after,.c-br::after{right:14px;border-right:1px solid #E6D3AC}.c-tr::before,.c-br::before{right:-1px;border-right:1px solid #E6D3AC}
+.c-tl,.c-tr{top:-8px}.c-tl::after,.c-tr::after{top:-1px;border-top:1px solid #E6D3AC}.c-tl::before,.c-tr::before{top:14px;border-top:1px solid #E6D3AC}
+.c-bl,.c-br{bottom:-8px}.c-bl::after,.c-br::after{bottom:-1px;border-bottom:1px solid #E6D3AC}.c-bl::before,.c-br::before{bottom:14px;border-bottom:1px solid #E6D3AC}
+.hex{display:flex;align-items:center;justify-content:center;position:relative;height:32px;padding:0 16px;margin:0 36px;box-sizing:border-box;border-top:1px solid #E6D3AC;border-bottom:1px solid #E6D3AC;text-decoration:none;color:#F2E3C4;font-family:'Cormorant Garamond',Georgia,serif;font-weight:500;font-size:19px;letter-spacing:0;transition:background 200ms ease-in-out}
+.hex .l,.hex .r{position:absolute;top:-1px;width:28px;height:32px;pointer-events:none}
+.hex .l svg,.hex .r svg{width:28px;height:32px;display:block;overflow:visible}
+.hex .l{left:-28px}.hex .r{right:-28px;transform:scaleX(-1)}
+.hex.ghost{color:#F2E3C4}
+.hex .bg{fill:transparent;transition:fill 200ms ease-in-out}
+.hex:hover,.hex.hover{background:#241A2E}.hex:hover .bg,.hex.hover .bg{fill:#241A2E}
+</style>
+</helmet>
+<div style="width: 390px; height: 844px; box-sizing: border-box; background: radial-gradient(circle at 100% 0%, {{glow}}, #120C18); color: #F2E3C4; font-family: 'Alegreya', Georgia, serif; display: flex; flex-direction: column; padding: 72px 24px 28px">
+  <div style="display: flex; flex-direction: column; align-items: center; gap: 0; margin-bottom: 24px">
+    <h1 style="margin: 0; display: flex; gap: 6px" aria-label="CARL">
+      <span style="display: flex; flex-direction: column; align-items: center; gap: 4px"><span style="display: flex; align-items: center; justify-content: center; width: 48px; height: 56px; border: 1px solid #F2E3C4; border-radius: 2px; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 700; font-size: 40px; line-height: 1">C</span><span style="font-variant: small-caps; letter-spacing: 0.08em; font-size: 12px; color: #C9B48C">change</span></span>
+      <span style="display: flex; flex-direction: column; align-items: center; gap: 4px"><span style="display: flex; align-items: center; justify-content: center; width: 48px; height: 56px; border: 1px solid #B795DB; border-bottom-width: 3px; background: #2A1E33; border-radius: 2px; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 700; font-size: 40px; line-height: 1; color: #B795DB">A</span><span style="font-variant: small-caps; letter-spacing: 0.08em; font-size: 12px; color: #C9B48C">add</span></span>
+      <span style="display: flex; flex-direction: column; align-items: center; gap: 4px"><span style="display: flex; align-items: center; justify-content: center; width: 48px; height: 56px; border: 1px solid #F2E3C4; border-radius: 2px; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 700; font-size: 40px; line-height: 1">R</span><span style="font-variant: small-caps; letter-spacing: 0.08em; font-size: 12px; color: #C9B48C">remove</span></span>
+      <span style="display: flex; flex-direction: column; align-items: center; gap: 4px"><span style="display: flex; align-items: center; justify-content: center; width: 48px; height: 56px; border: 1px solid #F2E3C4; border-radius: 2px; font-family: 'Cormorant Garamond', Georgia, serif; font-weight: 700; font-size: 40px; line-height: 1">L</span><span style="font-variant: small-caps; letter-spacing: 0.08em; font-size: 12px; color: #C9B48C">letters</span></span>
+    </h1>
+    <p style="margin: 14px 0 0; font-style: italic; font-size: 17px; color: #C9B48C; text-align: center">D&amp;D edition</p>
+  </div>
+  <label for="q" style="font-variant: small-caps; letter-spacing: 0.08em; font-size: 14px; color: #C9B48C; margin-bottom: 6px">Find a spell</label>
+  <div style="display: flex; align-items: center; gap: 10px; border: 1px solid #5A4A3A; border-bottom: 2px solid #F2E3C4; padding: 12px 14px; background: #120C18">
+    <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#C9B48C" stroke-width="1.5"><circle cx="11" cy="11" r="7"></circle><path d="M20 20l-4-4"></path></svg>
+    <div style="position: relative; flex: 1; height: 26px">
+      <div aria-hidden="true" style="position: absolute; inset: 0; display: flex; align-items: center; font-family: 'Alegreya', Georgia, serif; font-size: 20px; line-height: 1; white-space: pre"><span style="display: inline-block; width: 2px; height: 22px; background: #B8A78B; margin: 0 1px"></span><span style="color: #8A7A62; font-style: italic">Fireball, Web, Hunter’s Mark…</span></div>
+      <input id="q" value="" inputmode="search" enterkeyhint="go" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" aria-autocomplete="both" style="position: absolute; inset: 0; width: 100%; height: 100%; border: 0; outline: 0; background: transparent; color: transparent; caret-color: transparent; font-family: 'Alegreya', Georgia, serif; font-size: 20px; padding: 0">
+    </div>
+  </div>
+  <div style="display: flex; align-items: center; justify-content: center; gap: 12px; margin: 14px 0 2px">
+    <span style="flex: 1; height: 1px; background: #5A4A3A"></span>
+    <a href="EditorDark.dc.html" class="hex" style="margin-top: 8px; margin-bottom: 8px"><span class="l" aria-hidden="true"><svg viewBox="0 0 28 32" aria-hidden="true"><path class="bg" d="M28 0.5L12 16L28 31.5Z"/><path d="M28 0.5L12 16L28 31.5" fill="none" stroke="#E6D3AC" stroke-width="1"/><rect x="6.34" y="10.34" width="11.31" height="11.31" fill="none" stroke="#E6D3AC" stroke-width="1" transform="rotate(45 12 16)"/><rect x="13.17" y="13.17" width="5.66" height="5.66" fill="#E6D3AC" transform="rotate(45 16 16)"/></svg></span><span class="r" aria-hidden="true"><svg viewBox="0 0 28 32" aria-hidden="true"><path class="bg" d="M28 0.5L12 16L28 31.5Z"/><path d="M28 0.5L12 16L28 31.5" fill="none" stroke="#E6D3AC" stroke-width="1"/><rect x="6.34" y="10.34" width="11.31" height="11.31" fill="none" stroke="#E6D3AC" stroke-width="1" transform="rotate(45 12 16)"/><rect x="13.17" y="13.17" width="5.66" height="5.66" fill="#E6D3AC" transform="rotate(45 16 16)"/></svg></span>Surprise me</a>
+    <span style="flex: 1; height: 1px; background: #5A4A3A"></span>
+  </div>
+  <p style="margin: 28px 0 0; text-align: center; font-style: italic; font-size: 16px; line-height: 1.5; color: #C9B48C">Type a few letters, or let the dice choose.<br>339 spells from the SRD.</p>
+  <div style="flex: 1"></div>
+  <div style="display: flex; justify-content: center; gap: 20px; font-variant: small-caps; letter-spacing: 0.08em; font-size: 14px">
+    <a href="About.dc.html" style="text-decoration: none">How to play</a>
+    <span style="color: #5A4A3A">❧</span>
+    <a href="About.dc.html" style="text-decoration: none">About</a>
+  </div>
+  <p style="margin: 14px 0 0; text-align: center; font-size: 12px; line-height: 1.4; color: #C9B48C">Spell names from SRD 5.2.1, © Wizards of the Coast, used under CC-BY-4.0.</p>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"glow":{"editor":"color","default":"#241A2E"},"$preview":{"width":390,"height":844}}'>
+class Component extends DCLogic {
+  renderVals() { return { glow: this.props.glow ?? '#241A2E' }; }
+}
+</script>
+</body>
+</html>

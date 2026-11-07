@@ -1,0 +1,62 @@
+/* CARL design tokens. Dark is the reference theme; light mirrors it.
+   Source of truth for geometry: docs/design/mockups/*.dc.html (helmet <style> blocks). */
+
+:root {
+  --page: #F4ECDC;
+  --page-lift: #F4ECDC;        /* no gradient in light */
+  --ink: #2E1F14;
+  --ink-soft: #6E543F;
+  --line: #2E1F14;             /* frame, corners, button geometry, always 1px */
+  --rule: #D5C3A5;             /* quiet dividers, fleuron rules, input underline */
+  --accent: #7A4FA3;           /* the changed letter, the A in CARL, caret. Never buttons or links */
+  --hover: #EADFC8;            /* hex button hover fill */
+  --link: #4A2F1C;             /* underlined */
+  --link-underline: #B8A68C;
+  --ghost: #9C8468;            /* ghost completion text in search */
+  --tint: #EADFC8;             /* selected tile fill */
+
+  --font-display: 'Cormorant Garamond', Georgia, serif;   /* 500 buttons, 600/700 names + headings */
+  --font-body: 'Alegreya', Georgia, serif;                /* 400/500/italic */
+}
+
+[data-theme="dark"] {
+  --page: #120C18;
+  --page-lift: #241A2E;        /* body { background: radial-gradient(circle at 100% 0%, var(--page-lift), var(--page)) } */
+  --ink: #F2E3C4;
+  --ink-soft: #C9B48C;
+  --line: #E6D3AC;
+  --rule: #5A4A3A;
+  --accent: #B795DB;
+  --hover: #241A2E;
+  --link: #FFF3D6;
+  --link-underline: #9C8A6A;
+  --ghost: #8A7A62;
+  --tint: #2A1E33;
+}
+
+a { color: var(--link); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--link-underline); }
+
+/* ---- Frame with Deco corners (share page, show-my-screen, OG card at 2x) ----
+   Geometry is in px and requires border-box everywhere. Scale all px by 2 for the 1200x630 card. */
+.frame { position: relative; border: 1px solid var(--line); padding: 16px; box-sizing: border-box; background: var(--page); }
+.c { width: 8px; height: 8px; border: 1px solid var(--line); position: absolute; box-sizing: border-box; pointer-events: none; }
+.c::after, .c::before { content: ""; position: absolute; box-sizing: border-box; }
+.c::after { width: 32px; height: 15px; }
+.c::before { width: 15px; height: 32px; }
+.c-tl, .c-bl { left: -8px; } .c-tl::after, .c-bl::after { left: 14px; border-left: 1px solid var(--line); } .c-tl::before, .c-bl::before { left: -1px; border-left: 1px solid var(--line); }
+.c-tr, .c-br { right: -8px; } .c-tr::after, .c-br::after { right: 14px; border-right: 1px solid var(--line); } .c-tr::before, .c-br::before { right: -1px; border-right: 1px solid var(--line); }
+.c-tl, .c-tr { top: -8px; } .c-tl::after, .c-tr::after { top: -1px; border-top: 1px solid var(--line); } .c-tl::before, .c-tr::before { top: 14px; border-top: 1px solid var(--line); }
+.c-bl, .c-br { bottom: -8px; } .c-bl::after, .c-br::after { bottom: -1px; border-bottom: 1px solid var(--line); } .c-bl::before, .c-br::before { bottom: 14px; border-bottom: 1px solid var(--line); }
+/* markup: <div class="frame"><span class="c c-tl"></span><span class="c c-tr"></span><span class="c c-bl"></span><span class="c c-br"></span> ...content... </div> */
+
+/* ---- Hex button: the only button shape. 32px bar, 8px vertical margin => 48px tap target. ---- */
+.hex { display: flex; align-items: center; justify-content: center; position: relative; height: 32px; padding: 0 16px; margin: 8px 36px;
+       box-sizing: border-box; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); text-decoration: none; color: var(--ink);
+       font-family: var(--font-display); font-weight: 500; font-size: 19px; letter-spacing: 0; transition: background 200ms ease-in-out; }
+.hex .l, .hex .r { position: absolute; top: -1px; width: 28px; height: 32px; pointer-events: none; }
+.hex .l svg, .hex .r svg { width: 28px; height: 32px; display: block; overflow: visible; }
+.hex .l { left: -28px; } .hex .r { right: -28px; transform: scaleX(-1); }
+.hex .bg { fill: transparent; transition: fill 200ms ease-in-out; }
+.hex:hover, .hex:focus-visible { background: var(--hover); } .hex:hover .bg, .hex:focus-visible .bg { fill: var(--hover); }
+/* markup: <a class="hex"><span class="l">[button-tip.svg]</span><span class="r">[button-tip.svg]</span>Label</a>
+   The tip SVG uses currentColor for strokes/fills; set color: var(--line) on .l/.r, or inline the path with var(--line). */

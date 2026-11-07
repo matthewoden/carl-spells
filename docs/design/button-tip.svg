@@ -1,0 +1,10 @@
+<!-- Left tip of the hex button, 28x32. Mirror with scaleX(-1) for the right tip.
+     Parts: open triangle (apex at 12,16), open square (height 16, centred on the apex),
+     filled square (side 5.66, left point on the apex, right point on the open square's right vertex).
+     .bg is the hover fill; strokes/fill use currentColor = var(--line). -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 28 32" aria-hidden="true">
+  <path class="bg" d="M28 0.5L12 16L28 31.5Z" fill="transparent"/>
+  <path d="M28 0.5L12 16L28 31.5" fill="none" stroke="currentColor" stroke-width="1"/>
+  <rect x="6.34" y="10.34" width="11.31" height="11.31" fill="none" stroke="currentColor" stroke-width="1" transform="rotate(45 12 16)"/>
+  <rect x="13.17" y="13.17" width="5.66" height="5.66" fill="currentColor" transform="rotate(45 16 16)"/>
+</svg>
