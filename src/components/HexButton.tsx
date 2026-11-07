@@ -22,13 +22,13 @@ function Tips() {
   );
 }
 
-type Props = { children: ReactNode } & ({ to: string; onClick?: never } | { onClick: () => void; to?: never });
+type Props = { children: ReactNode; onClick?: () => void } & ({ to: string } | { onClick: () => void; to?: never });
 
 /** The only button shape: a 32px bar with Deco tips, 8px margin for a 48px tap target. */
 export function HexButton({ children, to, onClick }: Props) {
   if (to !== undefined) {
     return (
-      <Link className="hex" to={to}>
+      <Link className="hex" to={to} onClick={onClick}>
         <Tips />
         {children}
       </Link>

@@ -23,11 +23,16 @@ const TIP =
 const hex = (href: string, label: string) =>
   `<a class="hex" href="${href}"><span class="l" aria-hidden="true">${TIP}</span><span class="r" aria-hidden="true">${TIP}</span>${label}</a>`;
 
+// src/components/CarlMark.tsx, full size.
+const MARK = [['C', 'change'], ['A', 'add'], ['R', 'remove'], ['L', 'letters']]
+  .map(([l, w]) => `<span class="cm-col" aria-hidden="true"><span class="cm-tile"${l === 'A' ? ' data-hl="true"' : ''}>${l}</span><span class="cm-word">${w}</span></span>`)
+  .join('');
+
 /** Same markup and classes as src/routes/Share.tsx, minus interactivity. */
 function cardHtml(j: Joke): string {
   const line = [j.spell.line, j.status].filter(Boolean).join(' · ');
   return `<main class="page share">
-<a href="/" class="wordmark share-mark">CARL</a>
+<a href="/" class="carl-mark carl-mark-full share-mark"><span class="sr-only">CARL, home</span>${MARK}</a>
 <div class="frame share-card"><span class="c c-tl"></span><span class="c c-tr"></span><span class="c c-bl"></span><span class="c c-br"></span>
 <div class="share-in">
 <span class="smallcaps cast">Someone cast</span>

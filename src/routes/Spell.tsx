@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
-import { Link, useNavigate, useParams, useSearchParams } from 'react-router';
+import { Link, useLocation, useNavigate, useParams, useSearchParams } from 'react-router';
 import { Header } from '../components/Header';
 import { HexButton } from '../components/HexButton';
 import { Toast } from '../components/Toast';
@@ -21,7 +21,15 @@ export function Spell() {
   const g = params.get('g');
   const spell = findSpell(slug, isGame(g) ? g : game);
   const shared = params.get('name');
-  const initial = spell && shared && isNameSlug(shared) ? nameFromSlug(shared, spell.name) : spell?.name;
+  // Coming Back to this page: the exact text from last time, kept in its history entry
+  // (see the Editor). Otherwise the ?name= of a shared link, otherwise the spell itself.
+  const saved = (useLocation().state as { draft?: unknown } | null)?.draft;
+  const initial =
+    typeof saved === 'string'
+      ? saved
+      : spell && shared && isNameSlug(shared)
+        ? nameFromSlug(shared, spell.name)
+        : spell?.name;
 
   useEffect(() => {
     document.title = spell ? `${spell.name} · CARL` : 'CARL';
@@ -56,7 +64,22 @@ function Highlighted({ text, changed }: { text: string; changed: boolean[] }) {
 
 function Editor({ spell, initial, game }: { spell: SpellRecord; initial: string; game: Game }) {
   const navigate = useNavigate();
+  const location = useLocation();
   const [value, setValue] = useState(initial);
+
+  // Keep the edit in this page's history entry (replace, no new Back step), so leaving
+  // for show-my-screen, the share page, Another or home and coming Back restores it.
+  useEffect(() => {
+    if ((location.state as { draft?: unknown } | null)?.draft === value) return;
+    const t = setTimeout(
+      () => navigate({ pathname: location.pathname, search: location.search }, { replace: true, state: { draft: value } }),
+      250,
+    );
+    return () => clearTimeout(t);
+  }, [value, location.pathname, location.search, location.state, navigate]);
+
+  /** Save the edit right now, before a control takes the player elsewhere. */
+  const keep = () => navigate({ pathname: location.pathname, search: location.search }, { replace: true, state: { draft: value } });
   const [toast, setToast] = useState('');
   const fieldRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
@@ -78,9 +101,12 @@ function Editor({ spell, initial, game }: { spell: SpellRecord; initial: string;
   const clearToast = useCallback(() => setToast(''), []);
 
   async function share() {
-    const url = new URL(sharePath, location.origin).toString();
+    const url = new URL(sharePath, window.location.origin).toString();
     const text = changed ? `${spell.name} → ${value.trim()}` : spell.name;
-    if (navigator.share) {
+    // Native share sheet on phones and tablets only. On a desktop (macOS especially) the
+    // sheet has no "copy link", so copying is the more useful default there.
+    const touch = matchMedia('(pointer: coarse)').matches;
+    if (touch && navigator.share) {
       try {
         await navigator.share({ title: 'CARL', text, url });
         return;
@@ -101,7 +127,10 @@ function Editor({ spell, initial, game }: { spell: SpellRecord; initial: string;
       <div className="meta">
         <span className="smallcaps level">{spell.line}</span>
         <span className="divider" aria-hidden="true" />
-        <button type="button" className="smallcaps another" onClick={() => navigate(editorPath(randomSpell(game, spell)))}>
+        <button type="button" className="smallcaps another" onClick={() => {
+            keep();
+            navigate(editorPath(randomSpell(game, spell)));
+          }}>
           <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round">
             <path d="M12 2l9 5v10l-9 5-9-5V7z" />
             <path d="M12 2v10m0 0l9-5M12 12l-9-5M12 12v10" />
@@ -168,7 +197,9 @@ function Editor({ spell, initial, game }: { spell: SpellRecord; initial: string;
 
       <div className="actions">
         <HexButton onClick={share}>Share this spell</HexButton>
-        <HexButton to={screenPath(spell, value)}>Show my screen</HexButton>
+        <HexButton to={screenPath(spell, value)} onClick={keep}>
+          Show my screen
+        </HexButton>
       </div>
       <Toast message={toast} onDone={clearToast} />
     </>

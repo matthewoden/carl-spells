@@ -158,3 +158,85 @@ test.describe('spell list', () => {
     await expect.poll(() => page.evaluate(() => scrollY)).toBe(0);
   });
 });
+
+test.describe('sharing on a desktop', () => {
+  test.use({ viewport: { width: 1280, height: 800 }, isMobile: false, hasTouch: false });
+
+  test('Share copies the link instead of opening the share sheet', async ({ page, context }) => {
+    await context.grantPermissions(['clipboard-read', 'clipboard-write']);
+    await page.goto('/spell/fireball?name=fireballs');
+    await page.evaluate(() => {
+      (window as unknown as { shared: boolean }).shared = false;
+      navigator.share = async () => void ((window as unknown as { shared: boolean }).shared = true);
+    });
+    await page.getByRole('button', { name: 'Share this spell' }).click();
+    await expect(page.getByRole('status')).toHaveText('Link copied');
+    expect(await page.evaluate(() => navigator.clipboard.readText())).toMatch(/\/s\/fireball\/fireballs$/);
+    expect(await page.evaluate(() => (window as unknown as { shared: boolean }).shared)).toBe(false);
+  });
+});
+
+test.describe('the edit survives leaving and coming back', () => {
+  const edit = async (page: Page) => {
+    await page.goto('/spell/fireball');
+    await page.locator('#name').evaluate((el: HTMLTextAreaElement) => (el.focus(), el.setSelectionRange(0, 0)));
+    await page.keyboard.type('s'); // "Sfireball": capital moved, exact text matters
+    await expect(page.locator('#name')).toHaveValue('Sfireball');
+  };
+
+  test('back from show-my-screen, straight after typing', async ({ page }) => {
+    await edit(page);
+    await page.getByRole('link', { name: 'Show my screen' }).click();
+    await expect(page).toHaveURL(/\/screen\//);
+    await page.getByRole('button', { name: 'Back to the editor' }).click();
+    await expect(page).toHaveURL(/\/spell\/fireball$/);
+    await expect(page.locator('#name')).toHaveValue('Sfireball');
+  });
+
+  test('browser Back from home, and from Another', async ({ page }) => {
+    await edit(page);
+    await page.waitForTimeout(400); // the background save
+    await page.getByRole('link', { name: 'Spells' }).click();
+    await expect(page).toHaveURL(/\/$/);
+    await page.goBack();
+    await expect(page.locator('#name')).toHaveValue('Sfireball');
+    await page.locator('.another').click();
+    await expect(page).not.toHaveURL(/\/spell\/fireball$/);
+    await page.goBack();
+    await expect(page.locator('#name')).toHaveValue('Sfireball');
+  });
+
+  test('a reload keeps the edit; arriving by a link starts clean', async ({ page }) => {
+    await edit(page);
+    await page.waitForTimeout(400);
+    await page.reload();
+    await expect(page.locator('#name')).toHaveValue('Sfireball');
+    await page.goto('/');
+    await page.locator('#q').fill('fireball');
+    await page.locator('.results a', { hasText: /^Fireball/ }).first().click();
+    await expect(page).toHaveURL(/\/spell\/fireball$/);
+    await expect(page.locator('#name')).toHaveValue('Fireball');
+  });
+});
+
+test.describe('desktop layout', () => {
+  test.use({ viewport: { width: 1280, height: 800 }, isMobile: false, hasTouch: false });
+
+  test('the two buttons sit side by side, in a wider column', async ({ page }) => {
+    for (const path of ['/spell/fireball', '/s/fireball/fireballs']) {
+      await page.goto(path);
+      const tops = await page.$$eval('.actions .hex', (els) => els.map((e) => Math.round(e.getBoundingClientRect().top)));
+      expect(tops).toHaveLength(2);
+      expect(tops[0]).toBe(tops[1]);
+      expect(await page.$eval('.page', (e) => Math.round(e.getBoundingClientRect().width))).toBe(640);
+    }
+    await page.goto('/');
+    expect(await page.$eval('.page', (e) => Math.round(e.getBoundingClientRect().width))).toBe(480);
+  });
+
+  test('inner pages show the C·A·R·L tiles, linking home', async ({ page }) => {
+    await page.goto('/spells');
+    await page.getByRole('link', { name: 'CARL, home' }).click();
+    await expect(page).toHaveURL(/\/$/);
+  });
+});

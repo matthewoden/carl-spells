@@ -1,5 +1,9 @@
 *, *::before, *::after { box-sizing: border-box; }
 
+/* Page column: phone-width everywhere, wider on desktop for every page but home. */
+:root { --col: 480px; }
+@media (min-width: 768px) { :root:has(.page:not(.home)) { --col: 640px; } }
+
 html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
 
 body {
@@ -25,7 +29,7 @@ a:hover { color: var(--ink); }
   display: flex;
   flex-direction: column;
   width: 100%;
-  max-width: 480px;
+  max-width: var(--col);
   min-height: 100dvh;
   margin: 0 auto;
   padding:
@@ -66,6 +70,11 @@ button.hex { background: none; border-left: 0; border-right: 0; cursor: pointer;
 /* Shared page furniture */
 .page .spacer { flex: 1; min-height: 32px; }
 .page .actions { display: flex; flex-direction: column; gap: 14px; }
+/* Wide screens: the two hex buttons sit side by side. */
+@media (min-width: 768px) {
+  .page .actions { flex-direction: row; gap: 0; }
+  .page .actions > .hex { flex: 1; }
+}
 .attribution { margin: 14px 0 0; text-align: center; font-size: 12px; line-height: 1.4; color: var(--ink-soft); }
 /* The octagram ornament, in the frame colour, between hairlines. */
 .ornament { display: block; width: 22px; height: 22px; flex: none; color: var(--line); overflow: visible; }

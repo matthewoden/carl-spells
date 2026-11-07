@@ -1,7 +1,8 @@
 import './Header.css';
 import { Link } from 'react-router';
+import { CarlMark } from './CarlMark';
 
-/** "‹ Spells" header used by the editor and About. */
+/** "‹ Spells" header for the inner pages. Wide screens also get the C·A·R·L tiles, linking home. */
 export function Header() {
   return (
     <header className="header">
@@ -11,6 +12,7 @@ export function Header() {
         </svg>
         Spells
       </Link>
+      <CarlMark size="mini" className="header-mark" />
     </header>
   );
 }

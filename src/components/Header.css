@@ -1,4 +1,7 @@
 .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 36px; }
+/* Phones keep the header to "‹ Spells"; the tiles appear once there's room. */
+.header-mark { display: none !important; }
+@media (min-width: 768px) { .header-mark { display: inline-flex !important; } }
 .header .back {
   display: flex; align-items: center; gap: 6px; min-height: 44px;
   font-size: 15px; text-decoration: none; color: var(--link);

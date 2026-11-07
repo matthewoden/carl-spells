@@ -1,5 +1,6 @@
 import { useEffect, useMemo } from 'react';
 import { Link, useParams, useSearchParams } from 'react-router';
+import { CarlMark } from '../components/CarlMark';
 import { OrnamentRule } from '../components/Ornament';
 import { HexButton } from '../components/HexButton';
 import { diff } from '../lib/diff';
@@ -24,7 +25,7 @@ export function Share() {
   if (!joke) {
     return (
       <main className="page share">
-        <Link to="/" className="wordmark share-mark">CARL</Link>
+        <CarlMark className="share-mark" />
         <p className="missing">That spell link doesn’t resolve. <Link to="/">Find a spell</Link>.</p>
       </main>
     );
@@ -35,7 +36,7 @@ export function Share() {
 
   return (
     <main className="page share">
-      <Link to="/" className="wordmark share-mark">CARL</Link>
+      <CarlMark className="share-mark" />
       <div className="frame share-card">
         <span className="c c-tl" />
         <span className="c c-tr" />

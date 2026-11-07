@@ -42,7 +42,7 @@
 
 /* Compact bar: slides in once the title is gone. */
 .sl-bar {
-  position: fixed; top: 0; left: 50%; z-index: 5; width: 100%; max-width: 480px; transform: translate(-50%, -100%);
+  position: fixed; top: 0; left: 50%; z-index: 5; width: 100%; max-width: var(--col); transform: translate(-50%, -100%);
   display: flex; justify-content: space-between; align-items: center; gap: 12px;
   height: calc(env(safe-area-inset-top) + var(--bar-h));
   padding: env(safe-area-inset-top) calc(env(safe-area-inset-right) + 24px) 0 calc(env(safe-area-inset-left) + 24px);
@@ -58,7 +58,7 @@
 /* Jump strip: pinned to the right edge of the page column, not the window. */
 .sl-strip {
   position: fixed; z-index: 4;
-  right: max(calc(env(safe-area-inset-right) + 2px), calc((100vw - 480px) / 2 + 2px));
+  right: max(calc(env(safe-area-inset-right) + 2px), calc((100vw - var(--col)) / 2 + 2px));
   top: calc(env(safe-area-inset-top) + var(--bar-h) + 12px); bottom: calc(env(safe-area-inset-bottom) + 16px);
   width: 24px; display: flex; flex-direction: column; justify-content: center; align-items: stretch;
   touch-action: none; user-select: none; -webkit-user-select: none;
