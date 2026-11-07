@@ -115,12 +115,7 @@ function Editor({ spell, initial, game }: { spell: SpellRecord; initial: string;
         if ((e as DOMException).name === 'AbortError') return; // player closed the sheet
       }
     }
-    try {
-      await navigator.clipboard.writeText(url);
-      setToast('Link copied');
-    } catch {
-      setToast(url);
-    }
+    setToast((await copyText(url)) ? 'Link copied' : 'Couldn’t copy the link');
   }
 
   return (
@@ -218,13 +213,13 @@ function Editor({ spell, initial, game }: { spell: SpellRecord; initial: string;
 
       <div className="spacer" />
 
-      <div className="actions">
+      <div className="actions toast-anchor">
+        <Toast message={toast} onDone={clearToast} />
         <HexButton onClick={share}>Share this spell</HexButton>
         <HexButton to={screenPath(spell, value)} onClick={keep}>
           Show my screen
         </HexButton>
       </div>
-      <Toast message={toast} onDone={clearToast} />
     </>
   );
 }
@@ -236,4 +231,30 @@ function Missing({ slug }: { slug: string }) {
       <p><Link to="/">Find a spell</Link></p>
     </div>
   );
+}
+
+/**
+ * Copy to the clipboard. The async Clipboard API needs a secure (https) page; on plain
+ * http (e.g. testing on a phone over Wi-Fi) fall back to the older execCommand copy.
+ */
+async function copyText(text: string): Promise<boolean> {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch {
+    const ta = document.createElement('textarea');
+    ta.value = text;
+    ta.setAttribute('readonly', '');
+    ta.style.cssText = 'position:fixed;top:0;left:0;opacity:0;';
+    document.body.append(ta);
+    ta.select();
+    let ok = false;
+    try {
+      ok = document.execCommand('copy');
+    } catch {
+      ok = false;
+    }
+    ta.remove();
+    return ok;
+  }
 }

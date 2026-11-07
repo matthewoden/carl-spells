@@ -66,9 +66,8 @@ test.describe('editor', () => {
   test('an added letter is highlighted and named', async ({ page }) => {
     await page.goto('/spell/fireball');
     const field = page.locator('#name');
-    await field.click();
-    await field.press('End');
-    await field.pressSequentially('s');
+    await field.evaluate((el: HTMLTextAreaElement) => (el.focus(), el.setSelectionRange(el.value.length, el.value.length)));
+    await page.keyboard.type('s');
     await expect(field).toHaveValue('Fireballs');
     await expect(page.locator('.status-text')).toHaveText(' · one letter added');
     await expect(page.locator('.card-cast')).toHaveText('You cast');
@@ -172,6 +171,10 @@ test.describe('sharing on a desktop', () => {
     });
     await page.getByRole('button', { name: 'Share this spell' }).click();
     await expect(page.getByRole('status')).toHaveText('Link copied');
+    // It sits above the buttons, never over them.
+    const toast = await page.getByRole('status').boundingBox();
+    const button = await page.getByRole('button', { name: 'Share this spell' }).boundingBox();
+    expect(toast!.y + toast!.height).toBeLessThanOrEqual(button!.y);
     expect(await page.evaluate(() => navigator.clipboard.readText())).toMatch(/\/s\/fireball\/fireballs$/);
     expect(await page.evaluate(() => (window as unknown as { shared: boolean }).shared)).toBe(false);
   });

@@ -13,7 +13,8 @@ function Tip() {
   );
 }
 
-function Tips() {
+/** Both end caps, positioned by the parent's .l/.r rules. Also used by the Toast. */
+export function Tips() {
   return (
     <>
       <span className="l" aria-hidden="true"><Tip /></span>

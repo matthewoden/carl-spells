@@ -58,17 +58,27 @@ a:hover { color: var(--ink); }
 .hex .l, .hex .r { color: var(--line); }
 button.hex { background: none; border-left: 0; border-right: 0; cursor: pointer; width: auto; }
 
+/* Toast: the hex-button shape (hairline bar + the same tips), floating just above the
+   buttons it confirms, in the space the page spacer leaves there. */
+.toast-anchor { position: relative; }
 .toast {
-  position: fixed; left: 50%; bottom: calc(env(safe-area-inset-bottom) + 24px); transform: translate(-50%, 8px);
-  padding: 8px 18px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
-  background: var(--page); color: var(--ink); font-style: italic; font-size: 16px; white-space: nowrap;
+  position: absolute; left: 50%; bottom: calc(100% + 6px); transform: translate(-50%, 6px);
+  display: flex; align-items: center; height: 32px; padding: 0 18px;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--page);
+  color: var(--ink); font-family: var(--font-display); font-weight: 500; font-size: 19px; white-space: nowrap;
   opacity: 0; pointer-events: none; transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
 }
+.toast:empty { border-color: transparent; }
+.toast .l, .toast .r { position: absolute; top: -1px; width: 28px; height: 32px; color: var(--line); }
+.toast .l { left: -28px; } .toast .r { right: -28px; transform: scaleX(-1); }
+.toast svg { width: 28px; height: 32px; display: block; overflow: visible; }
+.toast .bg { fill: var(--page); }
 .toast[data-show] { opacity: 1; transform: translate(-50%, 0); }
 @media (prefers-reduced-motion: reduce) { .toast { transition: none; } }
 
 /* Shared page furniture */
-.page .spacer { flex: 1; min-height: 32px; }
+/* At least 48px: room for a toast above the buttons without covering anything. */
+.page .spacer { flex: 1; min-height: 48px; }
 .page .actions { display: flex; flex-direction: column; gap: 14px; }
 /* Wide screens: the two hex buttons sit side by side. */
 @media (min-width: 768px) {
