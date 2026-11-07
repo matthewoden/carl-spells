@@ -181,6 +181,21 @@ test.describe('sharing on a desktop', () => {
   });
 });
 
+test.describe('sharing on a phone', () => {
+  test.use({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
+
+  test('Share hands the share sheet the link alone', async ({ page }) => {
+    await page.goto('/spell/fireball?name=fireballs');
+    await page.evaluate(() => {
+      navigator.share = async (data) => void ((window as unknown as { sharedData: unknown }).sharedData = data);
+    });
+    await page.getByRole('button', { name: 'Share this spell' }).click();
+    const data = await page.evaluate(() => (window as unknown as { sharedData: Record<string, string> }).sharedData);
+    expect(Object.keys(data)).toEqual(['url']);
+    expect(data.url).toMatch(/\/s\/fireball\/fireballs$/);
+  });
+});
+
 test.describe('the edit survives leaving and coming back', () => {
   const edit = async (page: Page) => {
     await page.goto('/spell/fireball');

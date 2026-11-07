@@ -132,13 +132,15 @@ function Editor({ spell, initial, game }: { spell: SpellRecord; initial: string;
 
   async function share() {
     const url = new URL(sharePath, window.location.origin).toString();
-    const text = changed ? `${spell.name} → ${value.trim()}` : spell.name;
     // Native share sheet on phones and tablets only. On a desktop (macOS especially) the
     // sheet has no "copy link", so copying is the more useful default there.
     const touch = matchMedia('(pointer: coarse)').matches;
     if (touch && navigator.share) {
       try {
-        await navigator.share({ title: 'CARL', text, url });
+        // The URL alone: with text alongside, iOS treats the share as text, so Copy
+        // copies "Fireball → Fireballs" and Messages can drop the link preview.
+        // The preview card already says what was cast.
+        await navigator.share({ url });
         return;
       } catch (e) {
         if ((e as DOMException).name === 'AbortError') return; // player closed the sheet
