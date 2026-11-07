@@ -70,7 +70,8 @@ test.describe('editor', () => {
     await field.press('End');
     await field.pressSequentially('s');
     await expect(field).toHaveValue('Fireballs');
-    await expect(page.locator('.status-text')).toHaveText('One letter added');
+    await expect(page.locator('.status-text')).toHaveText(' · one letter added');
+    await expect(page.locator('.card-cast')).toHaveText('You cast');
     await expect(page.locator('.mirror .edit')).toHaveText('s');
   });
 

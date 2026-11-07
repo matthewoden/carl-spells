@@ -37,19 +37,19 @@ export function Share() {
   return (
     <main className="page share">
       <CarlMark className="share-mark" />
-      <div className="frame share-card">
+      <div className="frame card">
         <span className="c c-tl" />
         <span className="c c-tr" />
         <span className="c c-bl" />
         <span className="c c-br" />
-        <div className="share-in">
-          <span className="smallcaps cast">Someone cast</span>
-          <p className="original"><s>{joke.spell.name}</s></p>
+        <div className="card-in">
+          <span className="smallcaps card-cast">Someone cast</span>
+          <p className="card-original"><s>{joke.spell.name}</s></p>
           <h1 className="share-name">
             {[...joke.name].map((ch, i) => (changed[i] ? <span key={i} className="edit">{ch}</span> : ch))}
           </h1>
           <OrnamentRule />
-          <p className="smallcaps share-line">{line}</p>
+          <p className="smallcaps card-line">{line}</p>
         </div>
       </div>
       <div className="spacer" />

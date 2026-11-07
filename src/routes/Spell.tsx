@@ -2,6 +2,7 @@ import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } fr
 import { Link, useLocation, useNavigate, useParams, useSearchParams } from 'react-router';
 import { Header } from '../components/Header';
 import { HexButton } from '../components/HexButton';
+import { OrnamentRule } from '../components/Ornament';
 import { Toast } from '../components/Toast';
 import { describe, diff } from '../lib/diff';
 import { recase } from '../lib/recase';
@@ -124,13 +125,86 @@ function Editor({ spell, initial, game }: { spell: SpellRecord; initial: string;
 
   return (
     <>
-      <div className="meta">
-        <span className="smallcaps level">{spell.line}</span>
-        <span className="divider" aria-hidden="true" />
-        <button type="button" className="smallcaps another" onClick={() => {
+      {/* The same framed card as the share page: what you edit is what you send. */}
+      <div className="frame card">
+        <span className="c c-tl" />
+        <span className="c c-tr" />
+        <span className="c c-bl" />
+        <span className="c c-br" />
+        <div className="card-in">
+          <span className="smallcaps card-cast">{changed ? 'You cast' : 'Change, add, or remove a letter'}</span>
+          {/* Reserved even when unchanged so the name doesn't jump on the first edit. */}
+          <p className="card-original" aria-hidden={!changed} style={{ visibility: changed ? 'visible' : 'hidden' }}>
+            <s>{spell.name}</s>
+          </p>
+
+          <label htmlFor="name" className="sr-only">
+            New spell name, from {spell.name}
+          </label>
+          <div className="field" ref={fieldRef} style={{ fontSize: size }}>
+            {/* The mirror sets the height and paints the colours; the textarea on top holds the
+                caret and selection with transparent text, wrapping identically. */}
+            <div className="mirror" aria-hidden="true">
+              <Highlighted text={value} changed={result.changed} />
+              {'\u200b'}
+            </div>
+            <textarea
+              id="name"
+              className="name"
+              value={value}
+              rows={1}
+              ref={inputRef}
+              onChange={(e) => {
+                const raw = e.target.value.replace(/[\r\n]+/g, ' ');
+                const caret = e.target.selectionEnd ?? raw.length;
+                const next = recase(value, raw, caret);
+                if (next !== raw) caretRef.current = caret;
+                setValue(next);
+              }}
+              onKeyDown={(e) => {
+                if (e.key === 'Enter') {
+                  e.preventDefault();
+                  e.currentTarget.blur();
+                }
+              }}
+              autoComplete="off"
+              autoCorrect="off"
+              autoCapitalize="off"
+              spellCheck={false}
+              enterKeyHint="done"
+              aria-describedby="status"
+            />
+          </div>
+
+          <OrnamentRule />
+          {/* Reads like the share card's line and updates as you type. Only the edit
+              summary is announced, not the level on every keystroke. */}
+          <p className="smallcaps card-line" id="status">
+            <span className="level">{spell.line}</span>
+            <span aria-live="polite" className="status-text">
+              {status ? ` · ${status.toLowerCase()}` : ''}
+            </span>
+          </p>
+        </div>
+      </div>
+
+      <div className="edit-tools">
+        {changed && (
+          <>
+            <button type="button" className="link" onClick={() => setValue(spell.name)}>
+              Reset to {spell.name}
+            </button>
+            <span className="edit-dot" aria-hidden="true">·</span>
+          </>
+        )}
+        <button
+          type="button"
+          className="smallcaps another"
+          onClick={() => {
             keep();
             navigate(editorPath(randomSpell(game, spell)));
-          }}>
+          }}
+        >
           <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round">
             <path d="M12 2l9 5v10l-9 5-9-5V7z" />
             <path d="M12 2v10m0 0l9-5M12 12l-9-5M12 12v10" />
@@ -138,60 +212,6 @@ function Editor({ spell, initial, game }: { spell: SpellRecord; initial: string;
           Another
         </button>
       </div>
-
-      {/* Reserve the line even when unchanged so the name doesn't jump on the first edit. */}
-      <p className="original" aria-hidden={!changed} style={{ visibility: changed ? 'visible' : 'hidden' }}>
-        <s>{spell.name}</s>
-      </p>
-
-      <label htmlFor="name" className="sr-only">
-        New spell name, from {spell.name}
-      </label>
-      <div className="field" ref={fieldRef} style={{ fontSize: size }}>
-        {/* The mirror sets the height and paints the colours; the textarea on top holds the
-            caret and selection with transparent text, wrapping identically. */}
-        <div className="mirror" aria-hidden="true">
-          <Highlighted text={value} changed={result.changed} />
-          {'​'}
-        </div>
-        <textarea
-          id="name"
-          className="name"
-          value={value}
-          rows={1}
-          ref={inputRef}
-          onChange={(e) => {
-            const raw = e.target.value.replace(/[\r\n]+/g, ' ');
-            const caret = e.target.selectionEnd ?? raw.length;
-            const next = recase(value, raw, caret);
-            if (next !== raw) caretRef.current = caret;
-            setValue(next);
-          }}
-          onKeyDown={(e) => {
-            if (e.key === 'Enter') {
-              e.preventDefault();
-              e.currentTarget.blur();
-            }
-          }}
-          autoComplete="off"
-          autoCorrect="off"
-          autoCapitalize="off"
-          spellCheck={false}
-          enterKeyHint="done"
-          aria-describedby="status"
-        />
-      </div>
-
-      <div className="status" id="status" aria-live="polite">
-        <span className="hair" aria-hidden="true" style={{ visibility: status ? 'visible' : 'hidden' }} />
-        <span className="status-text">{status || ' '}</span>
-        <span className="hair" aria-hidden="true" style={{ visibility: status ? 'visible' : 'hidden' }} />
-      </div>
-      <p className="reset" style={{ visibility: changed ? 'visible' : 'hidden' }}>
-        <button type="button" className="link" onClick={() => setValue(spell.name)} tabIndex={changed ? 0 : -1}>
-          Reset to {spell.name}
-        </button>
-      </p>
 
       <div className="spacer" />
 

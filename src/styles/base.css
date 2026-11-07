@@ -83,3 +83,12 @@ button.hex { background: none; border-left: 0; border-right: 0; cursor: pointer;
 
 /* An edited letter, wherever a new spell name is drawn. */
 .edit { color: var(--accent); }
+
+/* The framed spell card, shared by the editor and the share page (and its server copy).
+   Numbers from docs/design/mockups/Share.dc.html. */
+.card { margin: 0; }
+.card-in { display: flex; flex-direction: column; align-items: center; text-align: center; padding: 36px 20px 28px; }
+.card-cast { font-size: 14px; letter-spacing: 0.1em; color: var(--ink-soft); margin-bottom: 18px; }
+.card-original { margin: 0 0 4px; font-family: var(--font-display); font-size: 22px; color: var(--ink-soft); }
+.card-original s { text-decoration-color: var(--accent); text-decoration-thickness: 1px; }
+.card-line { margin: 0 0 8px; font-size: 14px; color: var(--ink-soft); }

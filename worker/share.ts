@@ -33,13 +33,13 @@ function cardHtml(j: Joke): string {
   const line = [j.spell.line, j.status].filter(Boolean).join(' · ');
   return `<main class="page share">
 <a href="/" class="carl-mark carl-mark-full share-mark"><span class="sr-only">CARL, home</span>${MARK}</a>
-<div class="frame share-card"><span class="c c-tl"></span><span class="c c-tr"></span><span class="c c-bl"></span><span class="c c-br"></span>
-<div class="share-in">
-<span class="smallcaps cast">Someone cast</span>
-<p class="original"><s>${esc(j.spell.name)}</s></p>
+<div class="frame card"><span class="c c-tl"></span><span class="c c-tr"></span><span class="c c-bl"></span><span class="c c-br"></span>
+<div class="card-in">
+<span class="smallcaps card-cast">Someone cast</span>
+<p class="card-original"><s>${esc(j.spell.name)}</s></p>
 <h1 class="share-name">${highlighted(j.spell.name, j.name)}</h1>
 <div class="ornament-rule" aria-hidden="true"><span class="hair"></span>${ORNAMENT_SVG}<span class="hair"></span></div>
-<p class="smallcaps share-line">${esc(line)}</p>
+<p class="smallcaps card-line">${esc(line)}</p>
 </div></div>
 <div class="spacer"></div>
 <p class="pitch">Pick any spell. Add, change, or remove one letter. Pass it around the table.</p>
