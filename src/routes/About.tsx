@@ -5,7 +5,7 @@ import { getThemePref, setThemePref, type ThemePref } from '../lib/theme';
 import './About.css';
 
 /** Set once the repository is public; the footer link appears only then. */
-const SOURCE_URL = '';
+const SOURCE_URL = 'https://github.com/matthewoden/carl-spells';
 
 const THEMES: [ThemePref, string][] = [
   ['system', 'System'],
