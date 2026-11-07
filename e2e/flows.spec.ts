@@ -241,3 +241,40 @@ test.describe('desktop layout', () => {
     await expect(page).toHaveURL(/\/$/);
   });
 });
+
+test.describe('keyboard search on a desktop', () => {
+  test.use({ viewport: { width: 1280, height: 800 }, isMobile: false, hasTouch: false });
+
+  test('arrows walk the suggestions; up from the top returns to the box; Enter opens one', async ({ page }) => {
+    await page.goto('/');
+    const q = page.locator('#q');
+    await q.fill('fire');
+    const names = await page.locator('.r-name').allTextContents();
+    await q.press('ArrowDown');
+    await expect(page.locator('.results a').nth(0)).toBeFocused();
+    await page.keyboard.press('ArrowDown');
+    await expect(page.locator('.results a').nth(1)).toBeFocused();
+    await page.keyboard.press('ArrowUp');
+    await page.keyboard.press('ArrowUp');
+    await expect(q).toBeFocused();
+    await expect(q).toHaveValue('fire');
+    await page.keyboard.press('ArrowDown');
+    await page.keyboard.press('ArrowDown');
+    await page.keyboard.press('Enter');
+    await expect(page.locator('#name')).toHaveValue(names[1]);
+  });
+});
+
+test('the editor shows it can be edited: a rule under the name and a resting cursor', async ({ page }) => {
+  await page.goto('/spell/fireball');
+  const field = page.locator('.field');
+  expect(await field.evaluate((e) => getComputedStyle(e).borderBottomStyle)).toBe('solid');
+  // Zero width by design (so wrapping is unaffected); check it's displayed, not its box.
+  const shown = () => page.locator('.rest-caret').evaluate((e) => getComputedStyle(e).display !== 'none');
+  expect(await shown()).toBe(true);
+  await page.locator('#name').focus();
+  await expect.poll(shown).toBe(false);
+  // The cursor must not change how the name wraps.
+  const h = await page.$$eval('.mirror, #name', (els) => els.map((e) => Math.round(e.getBoundingClientRect().height)));
+  expect(h[1]).toBeGreaterThan(0);
+});

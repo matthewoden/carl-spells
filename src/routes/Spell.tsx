@@ -146,6 +146,9 @@ function Editor({ spell, initial, game }: { spell: SpellRecord; initial: string;
                 caret and selection with transparent text, wrapping identically. */}
             <div className="mirror" aria-hidden="true">
               <Highlighted text={value} changed={result.changed} />
+              {/* A resting cursor at the end says "this can be edited"; hidden while the real
+                  caret is showing (see Spell.css). */}
+              <span className="rest-caret" />
               {'\u200b'}
             </div>
             <textarea

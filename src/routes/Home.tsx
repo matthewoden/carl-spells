@@ -1,4 +1,4 @@
-import { useEffect, useId, useMemo, useState } from 'react';
+import { useEffect, useId, useMemo, useRef, useState } from 'react';
 import { Link, useNavigate } from 'react-router';
 import { CarlTiles } from '../components/CarlTiles';
 import { Footer } from '../components/Footer';
@@ -13,6 +13,28 @@ import './Home.css';
 export function Home() {
   const navigate = useNavigate();
   const listId = useId();
+  const inputRef = useRef<HTMLInputElement>(null);
+  const listRef = useRef<HTMLUListElement>(null);
+
+  // Arrow keys move between the search box and the suggestions (which stay real links, so
+  // Enter opens one and screen readers announce each). Up from the first returns to the box.
+  const links = () => [...(listRef.current?.querySelectorAll<HTMLAnchorElement>('a') ?? [])];
+  function onListKey(e: React.KeyboardEvent) {
+    const all = links();
+    const i = all.indexOf(document.activeElement as HTMLAnchorElement);
+    if (i < 0) return;
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      all[Math.min(i + 1, all.length - 1)].focus();
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      if (i === 0) inputRef.current?.focus();
+      else all[i - 1].focus();
+    } else if (e.key === 'Escape') {
+      e.preventDefault();
+      inputRef.current?.focus();
+    }
+  }
   const [game, setGame] = useGame();
   const [query, setQuery] = useState('');
   const [focused, setFocused] = useState(false);
@@ -46,6 +68,7 @@ export function Home() {
       </div>
 
       <form role="search" onSubmit={go}>
+        <span id={`${listId}-hint`} className="sr-only">Use the down arrow to move through suggestions.</span>
         <label htmlFor="q" className="smallcaps find">Find a spell</label>
         <div className="searchbox">
           <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5">
@@ -63,8 +86,15 @@ export function Home() {
               type="text"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
+              ref={inputRef}
               onFocus={() => setFocused(true)}
               onBlur={() => setFocused(false)}
+              onKeyDown={(e) => {
+                if (e.key === 'ArrowDown' && results.length) {
+                  e.preventDefault();
+                  links()[0]?.focus();
+                }
+              }}
               placeholder={info.placeholder}
               inputMode="search"
               enterKeyHint="go"
@@ -72,10 +102,8 @@ export function Home() {
               autoCorrect="off"
               autoCapitalize="off"
               spellCheck={false}
-              role="combobox"
-              aria-expanded={results.length > 0}
-              aria-controls={listId}
-              aria-autocomplete="both"
+              aria-controls={query.trim() ? listId : undefined}
+              aria-describedby={`${listId}-hint`}
             />
           </div>
           {results.length > 0 && (
@@ -87,7 +115,7 @@ export function Home() {
       </form>
 
       {query.trim() ? (
-        <ul className="results" id={listId}>
+        <ul className="results" id={listId} ref={listRef} onKeyDown={onListKey} aria-label="Suggestions">
           {results.map((s) => (
             <li key={s.slug}>
               <Link to={`/spell/${s.slug}${gameQuery(s)}`}>
