@@ -1,11 +1,12 @@
 /* The editor's field and tools; the framed card itself lives in base.css. */
-/* Under the card: "Reset to Fireball · Another". */
-.edit-tools { display: flex; align-items: center; justify-content: center; gap: 10px; margin-top: 14px; font-size: 14px; }
-.edit-dot { color: var(--rule); }
+/* Under the card, once edited: "Reset to Fireball". */
+.edit-tools { display: flex; justify-content: center; margin-top: 14px; font-size: 14px; }
+.edit-tools .link { min-height: 44px; }
+/* Random: top right of the header, level with "‹ Spells". */
 .another {
   display: flex; align-items: center; gap: 6px; min-height: 44px; padding: 0;
   background: none; border: 0; cursor: pointer;
-  font-family: var(--font-body); font-size: 14px; color: var(--ember);
+  font-family: var(--font-body); font-size: 15px; color: var(--ember);
 }
 
 .field {

@@ -38,11 +38,13 @@ export function Spell() {
 
   return (
     <main className="page">
-      <Header />
       {spell && initial ? (
         <Editor key={`${spell.game}/${spell.slug}/${shared ?? ''}`} spell={spell} initial={initial} game={game} />
       ) : (
-        <Missing slug={slug} />
+        <>
+          <Header />
+          <Missing slug={slug} />
+        </>
       )}
     </main>
   );
@@ -147,6 +149,25 @@ function Editor({ spell, initial, game }: { spell: SpellRecord; initial: string;
 
   return (
     <>
+      <Header
+        actions={
+          <button
+            type="button"
+            className="smallcaps another"
+            aria-label="Random spell"
+            onClick={() => {
+              keep();
+              navigate(editorPath(randomSpell(game, spell)));
+            }}
+          >
+            <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round">
+              <path d="M12 2l9 5v10l-9 5-9-5V7z" />
+              <path d="M12 2v10m0 0l9-5M12 12l-9-5M12 12v10" />
+            </svg>
+            Random
+          </button>
+        }
+      />
       {/* The same framed card as the share page: what you edit is what you send. */}
       <div className="frame card">
         <span className="c c-tl" />
@@ -214,30 +235,14 @@ function Editor({ spell, initial, game }: { spell: SpellRecord; initial: string;
         </div>
       </div>
 
-      <div className="edit-tools">
-        {changed && (
-          <>
-            <button type="button" className="link" onClick={() => setValue(spell.name)}>
-              Reset to {spell.name}
-            </button>
-            <span className="edit-dot" aria-hidden="true">·</span>
-          </>
-        )}
-        <button
-          type="button"
-          className="smallcaps another"
-          onClick={() => {
-            keep();
-            navigate(editorPath(randomSpell(game, spell)));
-          }}
-        >
-          <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round">
-            <path d="M12 2l9 5v10l-9 5-9-5V7z" />
-            <path d="M12 2v10m0 0l9-5M12 12l-9-5M12 12v10" />
-          </svg>
-          Another
-        </button>
-      </div>
+      {/* Only once there's something to undo, so an untouched card sits closer to the buttons. */}
+      {changed && (
+        <div className="edit-tools">
+          <button type="button" className="link" onClick={() => setValue(spell.name)}>
+            Reset to {spell.name}
+          </button>
+        </div>
+      )}
 
       <div className="spacer" />
 

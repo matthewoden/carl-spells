@@ -1,9 +1,13 @@
 import './Header.css';
+import type { ReactNode } from 'react';
 import { Link } from 'react-router';
 import { CarlMark } from './CarlMark';
 
-/** "‹ Spells" header for the inner pages. Wide screens also get the C·A·R·L tiles, linking home. */
-export function Header() {
+/**
+ * "‹ Spells" header for the inner pages. `actions` go top right (the editor's Random);
+ * wide screens also get the C·A·R·L tiles there, linking home.
+ */
+export function Header({ actions }: { actions?: ReactNode }) {
   return (
     <header className="header">
       <Link to="/" className="back smallcaps">
@@ -12,7 +16,10 @@ export function Header() {
         </svg>
         Spells
       </Link>
-      <CarlMark size="mini" className="header-mark" />
+      <div className="header-right">
+        {actions}
+        <CarlMark size="mini" className="header-mark" />
+      </div>
     </header>
   );
 }

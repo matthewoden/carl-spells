@@ -144,7 +144,8 @@ test.describe('spell list', () => {
     const y = await page.evaluate(() => Math.round(scrollY));
     await page.locator('#g-M .sl-row').first().evaluate((a: HTMLElement) => a.click());
     await expect(page).toHaveURL(/\/spell\//);
-    expect(await page.evaluate(() => scrollY)).toBe(0);
+    // The address changes a moment before the editor renders and resets the scroll.
+    await expect.poll(() => page.evaluate(() => scrollY)).toBe(0);
     await page.goBack();
     await expect.poll(() => page.evaluate(() => Math.round(scrollY))).toBe(y);
   });
