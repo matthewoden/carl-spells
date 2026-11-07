@@ -82,6 +82,16 @@ function Editor({ spell, initial, game }: { spell: SpellRecord; initial: string;
   /** Save the edit right now, before a control takes the player elsewhere. */
   const keep = () => navigate({ pathname: location.pathname, search: location.search }, { replace: true, state: { draft: value } });
   const [toast, setToast] = useState('');
+  const [editing, setEditing] = useState(false);
+  const touch = useMemo(() => matchMedia('(pointer: coarse)').matches, []);
+
+  /** A tap anywhere on the card (but not on a letter or a control) edits from the end. */
+  function editFromCard(e: React.MouseEvent) {
+    const el = inputRef.current;
+    if (!el || e.target === el || (e.target as HTMLElement).closest('a, button, textarea')) return;
+    el.focus();
+    el.setSelectionRange(el.value.length, el.value.length);
+  }
   const fieldRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   // Caret to restore after we rewrite the value (recase keeps the length, so it's stable).
@@ -107,6 +117,13 @@ function Editor({ spell, initial, game }: { spell: SpellRecord; initial: string;
   const result = useMemo(() => diff(spell.name, value), [spell.name, value]);
   const status = describe(result);
   const changed = result.distance > 0;
+  // The card's lead line walks the player through it: how to start, the rule while
+  // editing, then what they cast.
+  const lead = changed
+    ? 'You cast'
+    : editing
+      ? 'Change, add, or remove a letter'
+      : `${touch ? 'Tap' : 'Click'} the name to edit`;
   const size = useFitSize(value || spell.name, fieldRef);
   const sharePath = sharePathFor(spell, value);
   const clearToast = useCallback(() => setToast(''), []);
@@ -136,8 +153,10 @@ function Editor({ spell, initial, game }: { spell: SpellRecord; initial: string;
         <span className="c c-tr" />
         <span className="c c-bl" />
         <span className="c c-br" />
-        <div className="card-in">
-          <span className="smallcaps card-cast">{changed ? 'You cast' : 'Change, add, or remove a letter'}</span>
+        {/* Pointer convenience only: keyboard and screen-reader users reach the field itself. */}
+        {/* eslint-disable-next-line jsx-a11y/click-events-have-key-events, jsx-a11y/no-static-element-interactions */}
+        <div className="card-in" onClick={editFromCard}>
+          <span className="smallcaps card-cast">{lead}</span>
           {/* Reserved even when unchanged so the name doesn't jump on the first edit. */}
           <p className="card-original" aria-hidden={!changed} style={{ visibility: changed ? 'visible' : 'hidden' }}>
             <s>{spell.name}</s>
@@ -166,6 +185,8 @@ function Editor({ spell, initial, game }: { spell: SpellRecord; initial: string;
                 if (next !== raw) caretRef.current = caret;
                 setValue(next);
               }}
+              onFocus={() => setEditing(true)}
+              onBlur={() => setEditing(false)}
               onKeyDown={(e) => {
                 if (e.key === 'Enter') {
                   e.preventDefault();

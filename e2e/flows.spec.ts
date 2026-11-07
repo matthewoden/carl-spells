@@ -268,10 +268,18 @@ test.describe('keyboard search on a desktop', () => {
   });
 });
 
-test('on a phone the editor waits for a tap; a rule under the name marks the field', async ({ page }) => {
+test('on a phone the card guides the edit: tap, then the rule, then what you cast', async ({ page }) => {
   await page.goto('/spell/fireball');
   expect(await page.locator('.field').evaluate((e) => getComputedStyle(e).borderBottomStyle)).toBe('solid');
   await expect(page.locator('#name')).not.toBeFocused();
+  await expect(page.locator('.card-cast')).toHaveText('Tap the name to edit');
+  // A tap on the card's empty space (here, the level line) edits from the end.
+  await page.locator('.card-line').click();
+  await expect(page.locator('#name')).toBeFocused();
+  await expect(page.locator('.card-cast')).toHaveText('Change, add, or remove a letter');
+  await page.keyboard.type('s');
+  await expect(page.locator('#name')).toHaveValue('Fireballs');
+  await expect(page.locator('.card-cast')).toHaveText('You cast');
 });
 
 test.describe('editor on a desktop', () => {
@@ -280,6 +288,7 @@ test.describe('editor on a desktop', () => {
   test('opens with the field focused and the caret at the end', async ({ page }) => {
     await page.goto('/spell/fireball');
     await expect(page.locator('#name')).toBeFocused();
+    await expect(page.locator('.card-cast')).toHaveText('Change, add, or remove a letter');
     await page.keyboard.type('s');
     await expect(page.locator('#name')).toHaveValue('Fireballs');
   });
