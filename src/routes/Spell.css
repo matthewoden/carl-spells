@@ -28,9 +28,10 @@
 /* The hairline under the name marks the text field; it darkens while you edit. */
 .field:hover, .field:focus-within { border-bottom-color: var(--ink-soft); }
 /* Zero width, so the mirror still wraps exactly like the textarea above it. */
-.rest-caret { display: inline-block; position: relative; width: 0; height: 0.8em; vertical-align: -0.04em; }
+/* Thin and full line height, like the browser's own caret. */
+.rest-caret { display: inline-block; position: relative; width: 0; height: 1.05em; vertical-align: -0.2em; }
 .rest-caret::after {
-  content: ""; position: absolute; left: 2px; top: 0; width: 2px; height: 100%;
+  content: ""; position: absolute; left: 0; top: 0; width: 1px; height: 100%;
   background: var(--caret); animation: rest-caret 1.1s steps(1) infinite;
 }
 .field:focus-within .rest-caret { display: none; }
