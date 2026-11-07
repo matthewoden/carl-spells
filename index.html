@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#F4ECDC" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#120C18" media="(prefers-color-scheme: dark)" />
+    <title>CARL · Change, Add, Remove Letters</title>
+    <meta name="description" content="Pick a spell from D&amp;D or Pathfinder, change, add, or remove one letter, and pass it around the table." />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <!-- Default link preview for every page except share links (the Worker swaps these
+         for the joke's own card). Absolute URLs and analytics come from vite.config.ts. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="CARL" />
+    <meta property="og:title" content="CARL · Change, Add, Remove Letters" />
+    <meta property="og:description" content="Pick a spell from D&amp;D or Pathfinder, change, add, or remove one letter, and pass it around the table." />
+    <meta property="og:image" content="/og-default.png" />
+    <meta property="og:image:width" content="600" />
+    <meta property="og:image:height" content="315" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preload" href="/fonts/cormorant-garamond-latin-700-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/alegreya-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <script>
+      // Set the theme before first paint: saved choice (About page toggle, phase 4) wins,
+      // otherwise follow the OS. Dark is the reference theme.
+      (function () {
+        var mq = matchMedia('(prefers-color-scheme: dark)');
+        function apply() {
+          var saved = null;
+          try { saved = localStorage.getItem('carl-theme'); } catch (e) {}
+          // Show-my-screen pins dark while it's open; leave it alone there.
+          if (location.pathname.indexOf('/screen/') === 0) return;
+          document.documentElement.dataset.theme = saved || (mq.matches ? 'dark' : 'light');
+        }
+        apply();
+        mq.addEventListener('change', apply);
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,40 @@
+{
+  "name": "carl",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "npm run build && wrangler dev",
+    "deploy": "npm run build && wrangler deploy",
+    "data": "node data/build-spells.mjs",
+    "fonts": "node data/copy-fonts.mjs",
+    "typecheck": "tsc -b",
+    "phone": "npm run build && wrangler dev --ip 0.0.0.0 --port 8788",
+    "test": "vitest run",
+    "images": "esbuild src/lib/card.ts --bundle --format=esm --platform=node --outfile=data/.cache/card.mjs --log-level=warning && node data/build-images.mjs",
+    "e2e": "playwright test"
+  },
+  "dependencies": {
+    "@resvg/resvg-wasm": "^2.6.2",
+    "fuse.js": "^7.5.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router": "^8.5.1"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.14.0",
+    "@cloudflare/workers-types": "^5.20261107.1",
+    "@fontsource/alegreya": "^5.3.0",
+    "@fontsource/cormorant-garamond": "^5.3.0",
+    "@playwright/test": "1.60",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "@vitejs/plugin-react": "^6.2.1",
+    "opentype.js": "^2.0.0",
+    "typescript": "~5.9.3",
+    "vite": "^8.3.6",
+    "vitest": "^5.1.0",
+    "wrangler": "^4.158.0"
+  }
+}

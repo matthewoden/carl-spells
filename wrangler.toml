@@ -1,0 +1,31 @@
+name = "carl"
+main = "worker/index.ts"
+compatibility_date = "2026-10-01"
+
+# Static app + SPA fallback: /, /spell/*, /screen/*, /about never invoke the Worker.
+# Only share pages and preview images run code.
+[assets]
+directory = "dist"
+binding = "ASSETS"
+not_found_handling = "single-page-application"
+run_worker_first = ["/s/*", "/og/*"]
+
+[observability]
+enabled = true
+
+# Rendered preview images, 30-day TTL. No id: wrangler provisions it on first deploy
+# (and a local one for `wrangler dev`), then writes the id back here.
+[[kv_namespaces]]
+binding = "OG"
+
+# Fresh preview renders (the only CPU-heavy work) per client IP. Cached and stored
+# images are never limited, so crawlers that share IPs aren't penalised. Approximate,
+# per Cloudflare location. Once carl-spells.com is a zone, a WAF rate-limiting rule on
+# /og/* can take over from this.
+[[ratelimits]]
+name = "OG_RENDERS"
+namespace_id = "1001"
+
+  [ratelimits.simple]
+  limit = 20
+  period = 60
