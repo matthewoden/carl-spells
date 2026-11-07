@@ -2,6 +2,12 @@ name = "carl"
 main = "worker/index.ts"
 compatibility_date = "2026-10-01"
 
+# Served only on carl-spells.com: one URL per page for link previews and canonical links.
+# Wrangler creates the DNS record and certificate on deploy (the zone is in this account).
+routes = [{ pattern = "carl-spells.com", custom_domain = true }]
+workers_dev = false
+preview_urls = false
+
 # Static app + SPA fallback: /, /spell/*, /screen/*, /about never invoke the Worker.
 # Only share pages and preview images run code.
 [assets]
