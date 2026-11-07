@@ -80,10 +80,15 @@ button.hex { background: none; border-left: 0; border-right: 0; cursor: pointer;
 /* At least 48px: room for a toast above the buttons without covering anything. */
 .page .spacer { flex: 1; min-height: 48px; }
 .page .actions { display: flex; flex-direction: column; gap: 14px; }
-/* Wide screens: the two hex buttons sit side by side. */
+/* Wide screens: hex buttons sit side by side, each a normal button width, centred. */
 @media (min-width: 768px) {
-  .page .actions { flex-direction: row; gap: 0; }
-  .page .actions > .hex { flex: 1; }
+  .page .actions { flex-direction: row; justify-content: center; gap: 0; }
+  .page .actions > .hex { flex: 0 1 280px; }
+}
+/* Show my screen is for passing a phone or tablet around the table: not on a computer.
+   Decided by pointer, not width, so a landscape iPad keeps it. */
+@media (hover: hover) and (pointer: fine) {
+  .show-screen { display: none !important; }
 }
 .attribution { margin: 14px 0 0; text-align: center; font-size: 12px; line-height: 1.4; color: var(--ink-soft); }
 /* The octagram ornament, in the frame colour, between hairlines. */

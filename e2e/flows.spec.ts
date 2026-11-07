@@ -227,14 +227,15 @@ test.describe('the edit survives leaving and coming back', () => {
 test.describe('desktop layout', () => {
   test.use({ viewport: { width: 1280, height: 800 }, isMobile: false, hasTouch: false });
 
-  test('the two buttons sit side by side, in a wider column', async ({ page }) => {
-    for (const path of ['/spell/fireball', '/s/fireball/fireballs']) {
-      await page.goto(path);
-      const tops = await page.$$eval('.actions .hex', (els) => els.map((e) => Math.round(e.getBoundingClientRect().top)));
-      expect(tops).toHaveLength(2);
-      expect(tops[0]).toBe(tops[1]);
-      expect(await page.$eval('.page', (e) => Math.round(e.getBoundingClientRect().width))).toBe(640);
-    }
+  test('buttons sit side by side in a wider column; no Show my screen on a computer', async ({ page }) => {
+    await page.goto('/s/fireball/fireballs');
+    const tops = await page.$$eval('.actions .hex', (els) => els.map((e) => Math.round(e.getBoundingClientRect().top)));
+    expect(tops).toHaveLength(2);
+    expect(tops[0]).toBe(tops[1]);
+    await page.goto('/spell/fireball');
+    expect(await page.$eval('.page', (e) => Math.round(e.getBoundingClientRect().width))).toBe(640);
+    await expect(page.getByRole('link', { name: 'Show my screen' })).toBeHidden();
+    await expect(page.getByRole('button', { name: 'Share this spell' })).toBeVisible();
     await page.goto('/');
     expect(await page.$eval('.page', (e) => Math.round(e.getBoundingClientRect().width))).toBe(480);
   });

@@ -249,7 +249,7 @@ function Editor({ spell, initial, game }: { spell: SpellRecord; initial: string;
       <div className="actions toast-anchor">
         <Toast message={toast} onDone={clearToast} />
         <HexButton onClick={share}>Share this spell</HexButton>
-        <HexButton to={screenPath(spell, value)} onClick={keep}>
+        <HexButton to={screenPath(spell, value)} onClick={keep} className="show-screen">
           Show my screen
         </HexButton>
       </div>
