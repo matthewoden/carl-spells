@@ -4,14 +4,14 @@ Nov 7, 2026 · @Matt
 
 ## Overview and constraints
 
-Carl is a mobile-first web app for the “add, change, or remove a letter” spell-name game: pick an SRD spell, make one edit, share the result. It runs entirely on Cloudflare’s free tier with real URLs for every screen and every shared joke.
+Carl is a mobile-first web app for the “add, change, or remove a letter” spell-name game: pick a spell from D&D (SRD 5.2.1) or Pathfinder 2E (Player Core 1 & 2), make one edit, share the result. It runs entirely on Cloudflare’s free tier with real URLs for every screen and every shared joke.
 
 Hard constraints:
 
 - Free tier only: one Worker (100k requests/day, 10 ms CPU), static assets (free, unlimited), KV, R2. No Workers Paid, no D1 needed.
 - Real path routing: `/spell/fireball`, `/s/<share-id>`, never `#/`. Share pages must render OG tags server-side so Reddit, Discord and iMessage crawlers see the card.
 - Mobile-first: letter-level editing by tap, native share sheet, a “show my screen” mode.
-- Content from SRD 5.2.1 (CC-BY-4.0) only; attribution on every page; no “D&D” in the product name or domain.
+- Content from SRD 5.2.1 (CC-BY-4.0) and Pathfinder Player Core 1 & 2 (ORC License) only; attribution on every page. Domain is carl-spells.com; the product name stays CARL.
 - No accounts, no user-generated text beyond one letter edit of a known name, so nothing to moderate.
 
 ## Architecture on Cloudflare
@@ -37,10 +37,13 @@ Every screen has a real path; the only server-rendered routes are the share page
 | --- | --- | --- |
 | `/` | Static `index.html` | Spell search, the home screen |
 | `/spell/:slug` | Static `index.html` (SPA fallback) | Editor for one spell, e.g. `/spell/fireball` |
-| `/s/:spell/:name` | Worker, SSR | Share page: OG tags + the card, then the app hydrates into the editor with the edit applied |
-| `/og/:spell/:name.png` | Worker, cached | 1200×630 preview image |
+| `/s/:spell/:name` | Worker, SSR | Share page: OG tags + the card, with Cast your own / Remix this one |
+| `/og/:spell/:name.png` | Worker, cached | 600×315 preview image |
 | `/screen/:spell/:name` | Static `index.html` | Full-width “show my screen” view |
+| `/spells` | Static `index.html` | Every spell in one game, grouped by letter or level/rank, sortable; `?g=`, `?by=level`, `?sort=desc` |
 | `/about` | Static `index.html` | Rules, attribution, source link |
+
+Two games, one set of URLs: paths carry only the spell slug. 338 slugs belong to one game; 70 (Fireball, Bless…) exist in both, and for those the game only changes the spell line (“Level 3 · Evocation” vs “Rank 3 · Arcane, Primal”), so links to them add `?g=pf2e` when they come from Pathfinder (D&D is the default). The build fails if a shared slug ever maps to two different names. The player's game is a device preference set by the home-screen toggle; it scopes search, Surprise me and Another, and opening someone else's link doesn't change it.
 
 Because any edit is allowed, the share URL carries the new name as text rather than a packed edit: `/s/<spell-slug>/<new-name-slug>`, e.g. `/s/fireball/fireballs` or `/s/protection-from-evil-and-good/protection-from-evil-and-food`. The spell slug identifies the original (so the card can show the strikethrough and the level/school line) and the second segment is the joke, lowercase with hyphens for spaces, apostrophes dropped. Readable aloud at the table, and no database. The Worker accepts the second segment only if it is 1–40 characters of `[a-z0-9'-]`, so the image route can’t be turned into a free text renderer; title-case is restored from word boundaries when rendering.
 
@@ -58,11 +61,13 @@ Data pipeline, run at build time, never at runtime:
 2. Emit `names.json`: an ordered array of names only, \~10 KB, imported by both the app and the Worker. Index order is part of the share code, so append new spells at the end and never reorder.
 3. Names, level and school only; no descriptions. The card and the editor show the name, the edit, and the level/school line, nothing else.
 
+Pathfinder 2E: ORC-licensed Remaster spells from Player Core and Player Core 2 only (408 spells), pulled at build time from the Foundry VTT pf2e system (`data/build-pf2e.mjs`, pinned commit), which records each spell's license and book. No legacy OGL content and no Lost Omens books, whose Golarion names are Paizo Reserved Material. The About page carries the ORC notice, the two books' attribution lines verbatim, and Reserved Material / Expressly Designated Licensed Material statements.
+
 Attribution, required by the license, in the About page and the footer of every share page:
 
 > This work includes material from the System Reference Document 5.2.1 (“SRD 5.2.1”) by Wizards of the Coast LLC, available at https://www.dndbeyond.com/srd. The SRD 5.2.1 is licensed under the Creative Commons Attribution 4.0 International License.
 
-Trademark: CC-BY covers the text, not the marks. Keep “D&D” and “Dungeons & Dragons” out of the name, domain, logo and OG images; “spells from the 5e SRD” in body copy is fine.
+Trademark: CC-BY covers the text, not the marks. The domain carl-dnd.com uses “dnd” as shorthand and appears in the OG card footer; keep the “D&D” and “Dungeons & Dragons” marks out of the logo and OG images; “spells from the 5e SRD” in body copy is fine.
 
 ## Core game mechanics
 
@@ -191,6 +196,7 @@ Phases 1 and 2 are a weekend; phase 3 is where the CPU budget gets measured and 
 
 Open questions to settle before phase 1:
 
-- [ ] Final name and domain (carl-spells.com or similar; not carl-dnd.com)
+- [x] Final name and domain: CARL at carl-spells.com
+- [x] Second game: Pathfinder 2E, Player Core 1 & 2 (ORC)
 - [ ] Include SRD 5.1-only spell names alongside 5.2.1, or 5.2.1 alone?
-- [ ] Does the share card show the original name, or hide it for a guess-the-spell variant?
+- [x] The share card keeps the original name (struck through); hiding it is a show-my-screen toggle only
