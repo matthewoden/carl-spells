@@ -1,7 +1,5 @@
 # Carl — Implementation Plan
 
-Nov 7, 2026 · @Matt
-
 ## Overview and constraints
 
 Carl is a mobile-first web app for the “add, change, or remove a letter” spell-name game: pick a spell from D&D (SRD 5.2.1) or Pathfinder 2E (Player Core 1 & 2), make one edit, share the result. It runs entirely on Cloudflare’s free tier with real URLs for every screen and every shared joke.
