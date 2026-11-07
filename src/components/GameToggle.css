@@ -1,0 +1,27 @@
+/* The hex button split in two (docs: toggle mockup B). The selected half and its tip fill
+   with --tint; lines and diamonds stay as they are, like the hex button's hover rule. */
+.game-toggle { display: flex; flex-direction: column; align-items: center; margin-top: 14px; }
+.gt-bar {
+  position: relative; display: flex; height: 32px; margin: 8px 28px 0;
+  border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+}
+.gt-bar .l, .gt-bar .r { position: absolute; top: -1px; width: 28px; height: 32px; color: var(--line); pointer-events: none; }
+.gt-bar .l { left: -28px; } .gt-bar .r { right: -28px; transform: scaleX(-1); }
+.gt-bar svg { width: 28px; height: 32px; display: block; overflow: visible; }
+.gt-bar .bg { fill: transparent; transition: fill 200ms ease-in-out; }
+.gt-bar[data-sel="dnd"] .l .bg, .gt-bar[data-sel="pf2e"] .r .bg { fill: var(--tint); }
+.gt-cell { display: flex; }
+.gt-div { width: 1px; background: var(--line); }
+.gt-seg {
+  display: flex; align-items: center; justify-content: center; width: 84px; padding: 0;
+  background: transparent; border: 0; cursor: pointer;
+  font-family: var(--font-display); font-weight: 500; font-size: 19px; letter-spacing: 0;
+  font-variant-numeric: lining-nums; /* full-height 2 in PF2E */
+  color: var(--ink-soft); transition: background 200ms ease-in-out, color 200ms ease-in-out;
+}
+.gt-seg[aria-checked="true"] { background: var(--tint); color: var(--ink); }
+.gt-seg:not([aria-checked="true"]):hover { color: var(--ink); }
+.gt-seg:focus-visible { outline: 1px solid var(--line); outline-offset: -4px; }
+/* 32px bar + 8px above + the caption below makes a 48px+ tap zone. */
+.gt-caption { margin-top: 4px; font-variant: small-caps; letter-spacing: 0.08em; font-size: 12px; color: var(--ink-soft); }
+@media (prefers-reduced-motion: reduce) { .gt-bar .bg, .gt-seg { transition: none; } }

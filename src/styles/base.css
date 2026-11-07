@@ -1,0 +1,76 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  min-height: 100dvh;
+  background-color: var(--page);
+  background-image: radial-gradient(circle at 100% 0%, var(--page-lift), var(--page));
+  background-attachment: fixed;
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+  -webkit-tap-highlight-color: transparent;
+}
+
+a:hover { color: var(--ink); }
+
+:focus-visible { outline: 1px solid var(--line); outline-offset: 3px; }
+
+/* Page column: the mockups are 390 wide with 24px gutters; centre it on larger screens. */
+.page {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 480px;
+  min-height: 100dvh;
+  margin: 0 auto;
+  padding:
+    calc(env(safe-area-inset-top) + 24px)
+    calc(env(safe-area-inset-right) + 24px)
+    calc(env(safe-area-inset-bottom) + 28px)
+    calc(env(safe-area-inset-left) + 24px);
+}
+
+.smallcaps { font-variant: small-caps; letter-spacing: 0.08em; }
+
+.wordmark {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 19px;
+  letter-spacing: 0.16em;
+  color: var(--ink);
+}
+
+.sr-only {
+  position: absolute; width: 1px; height: 1px; overflow: hidden;
+  clip: rect(0 0 0 0); white-space: nowrap;
+}
+
+/* hex button: the tip SVG strokes use currentColor; tokens.css sets the bar. */
+.hex .l, .hex .r { color: var(--line); }
+button.hex { background: none; border-left: 0; border-right: 0; cursor: pointer; width: auto; }
+
+.toast {
+  position: fixed; left: 50%; bottom: calc(env(safe-area-inset-bottom) + 24px); transform: translate(-50%, 8px);
+  padding: 8px 18px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line);
+  background: var(--page); color: var(--ink); font-style: italic; font-size: 16px; white-space: nowrap;
+  opacity: 0; pointer-events: none; transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+}
+.toast[data-show] { opacity: 1; transform: translate(-50%, 0); }
+@media (prefers-reduced-motion: reduce) { .toast { transition: none; } }
+
+/* Shared page furniture */
+.page .spacer { flex: 1; min-height: 32px; }
+.page .actions { display: flex; flex-direction: column; gap: 14px; }
+.attribution { margin: 14px 0 0; text-align: center; font-size: 12px; line-height: 1.4; color: var(--ink-soft); }
+/* The octagram ornament, in the frame colour, between hairlines. */
+.ornament { display: block; width: 22px; height: 22px; flex: none; color: var(--line); overflow: visible; }
+.ornament-rule { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 18px; }
+.ornament-rule .hair { width: 36px; height: 1px; background: var(--rule); }
+
+/* An edited letter, wherever a new spell name is drawn. */
+.edit { color: var(--accent); }

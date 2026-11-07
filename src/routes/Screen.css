@@ -1,0 +1,64 @@
+/* Numbers from docs/design/mockups/Screen*.dc.html. No chrome; the frame sits inside the
+   safe area, the page colour runs under the notch/island. */
+.screen {
+  position: fixed; inset: 0; display: flex;
+  padding:
+    max(env(safe-area-inset-top), 16px) max(env(safe-area-inset-right), 16px)
+    max(env(safe-area-inset-bottom), 16px) max(env(safe-area-inset-left), 16px);
+  /* Flat, matching the frame's interior: the dark theme's corner lift read as a lighter
+     band down the right margin in landscape, and the margin here should vanish under the
+     notch rather than look like a letterbox. */
+  background: var(--page);
+  user-select: none; -webkit-user-select: none;
+}
+.screen-frame { flex: 1; display: flex; min-width: 0; min-height: 0; }
+.screen-in { flex: 1; display: flex; flex-direction: column; min-width: 0; min-height: 0; padding: 12px 8px 20px; }
+
+.screen-top { display: flex; justify-content: space-between; align-items: center; padding: 0 8px; opacity: 0.55; transition: opacity 400ms ease-in-out; }
+.screen-top[data-hidden] { opacity: 0; }
+.screen-back {
+  display: flex; align-items: center; justify-content: center; width: 44px; height: 44px;
+  padding: 0; background: none; border: 0; color: var(--ink); cursor: pointer;
+}
+.screen-awake, .screen-level-top { font-size: 13px; letter-spacing: 0.1em; color: var(--ink-soft); }
+.screen-level-top { display: none; }
+
+.screen-body { flex: 1; min-height: 0; display: flex; flex-direction: column; justify-content: center; gap: 18px; }
+/* The SVG is sized in JS to the space the lines below leave; the group centres together. */
+.screen-name { display: flex; justify-content: center; min-height: 0; }
+.screen-name svg { display: block; overflow: visible; cursor: pointer; }
+.screen-rest { display: flex; flex-direction: column; gap: 18px; }
+.screen-text { font-family: var(--font-display); font-weight: 700; font-size: 100px; letter-spacing: -0.01em; fill: var(--ink); }
+.screen-text .edit { fill: var(--accent); }
+
+.screen-under { display: flex; flex-direction: column; gap: 18px; transition: opacity 200ms ease-in-out; }
+.screen-under[data-hidden] { opacity: 0; }
+.screen-under .ornament-rule { margin: 0; gap: 14px; }
+.screen-under .ornament-rule .hair { width: 56px; }
+.screen-under .ornament { width: 26px; height: 26px; }
+.screen-was { margin: 0; text-align: center; font-family: var(--font-display); font-size: 30px; color: var(--ink-soft); }
+.screen-was[data-long] { font-size: 22px; }
+.screen-was s { text-decoration-color: var(--accent); text-decoration-thickness: 1px; }
+.screen-level { margin: 0; text-align: center; font-size: 15px; letter-spacing: 0.1em; color: var(--ink-soft); }
+.screen-hint { margin: 0; text-align: center; font-size: 13px; font-style: italic; color: var(--ink-soft); opacity: 0.7; }
+.screen-missing { margin: auto; color: var(--ink-soft); font-style: italic; }
+
+/* Landscape (the primary orientation): level line moves up into the top bar, tighter. */
+@media (orientation: landscape) {
+  .screen-in { position: relative; padding: 10px 24px 14px; }
+  /* The top bar floats over the frame's top edge so the name gets the full height. */
+  .screen-top { position: absolute; top: 4px; left: 16px; right: 24px; padding: 0; z-index: 1; }
+  .screen-body { padding-top: 24px; }
+  .screen-awake, .screen-level { display: none; }
+  .screen-level-top { display: inline; }
+  .screen-body { gap: 6px; }
+  .screen-under, .screen-rest { gap: 6px; }
+  .screen-under .ornament-rule { gap: 12px; }
+  .screen-under .ornament-rule .hair { width: 48px; }
+  .screen-under .ornament { width: 22px; height: 22px; }
+  .screen-was { font-size: 20px; }
+  .screen-hint { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .screen-top, .screen-under { transition: none; }
+}

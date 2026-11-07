@@ -1,0 +1,7 @@
+/* Self-hosted, Latin-subset woff2 (SIL OFL), copied from @fontsource by data/copy-fonts.mjs. */
+@font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 500; font-display: swap; src: url('/fonts/cormorant-garamond-latin-500-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 600; font-display: swap; src: url('/fonts/cormorant-garamond-latin-600-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Cormorant Garamond'; font-style: normal; font-weight: 700; font-display: swap; src: url('/fonts/cormorant-garamond-latin-700-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Alegreya'; font-style: normal; font-weight: 400; font-display: swap; src: url('/fonts/alegreya-latin-400-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Alegreya'; font-style: normal; font-weight: 500; font-display: swap; src: url('/fonts/alegreya-latin-500-normal.woff2') format('woff2'); }
+@font-face { font-family: 'Alegreya'; font-style: italic; font-weight: 400; font-display: swap; src: url('/fonts/alegreya-latin-400-italic.woff2') format('woff2'); }

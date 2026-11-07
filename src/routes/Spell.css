@@ -1,0 +1,47 @@
+/* Numbers from docs/design/mockups/Editor.dc.html */
+.meta { display: flex; align-items: center; justify-content: center; gap: 14px; margin-bottom: 8px; }
+.meta .level { font-size: 14px; color: var(--ink-soft); }
+.meta .divider { width: 1px; height: 14px; background: var(--rule); }
+.meta .another {
+  display: flex; align-items: center; gap: 6px; min-height: 44px; padding: 0;
+  background: none; border: 0; cursor: pointer;
+  font-family: var(--font-body); font-size: 14px; color: var(--ember);
+}
+
+.original {
+  margin: 0 0 6px; text-align: center;
+  font-family: var(--font-display); font-size: 22px; color: var(--ink-soft);
+}
+.original s { text-decoration-color: var(--accent); text-decoration-thickness: 1px; }
+
+.field {
+  position: relative; margin: 0 0 22px; padding: 10px 0 14px; border-bottom: 1px solid var(--rule);
+  font-family: var(--font-display); font-weight: 700; line-height: 1.05; letter-spacing: -0.01em;
+}
+/* Mirror and textarea must wrap identically: same font, width, padding and wrapping rules. */
+.field .mirror, .field .name {
+  font: inherit; letter-spacing: inherit; line-height: inherit; text-align: center;
+  white-space: pre-wrap; overflow-wrap: anywhere; word-break: normal;
+}
+.field .mirror { color: var(--ink); min-height: 1.05em; }
+.field .name {
+  position: absolute; left: 0; right: 0; top: 10px; bottom: 14px; width: 100%;
+  margin: 0; padding: 0; border: 0; outline: 0; resize: none; overflow: hidden;
+  background: transparent; color: transparent; -webkit-text-fill-color: transparent;
+  caret-color: var(--caret);
+}
+.field .name::selection { background: color-mix(in srgb, var(--accent) 25%, transparent); }
+.field:focus-within { border-bottom-color: var(--ink-soft); }
+
+.status { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 6px; }
+.status .hair { width: 40px; height: 1px; background: var(--rule); }
+.status-text { font-style: italic; font-size: 16px; color: var(--ink-soft); }
+
+.reset { margin: 0; text-align: center; font-size: 14px; }
+.link {
+  padding: 0; background: none; border: 0; cursor: pointer; font: inherit;
+  color: var(--link); text-decoration: underline; text-underline-offset: 3px; text-decoration-color: var(--rule);
+}
+
+
+.missing { text-align: center; color: var(--ink-soft); font-style: italic; margin-top: 48px; }

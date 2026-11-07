@@ -1,0 +1,26 @@
+/* C·A·R·L tiles. Numbers from docs/design/mockups/Main.dc.html; motion from the Flip mock.
+   Columns use margins rather than a flex gap so one can collapse to nothing. */
+.tiles { margin: 0; display: flex; perspective: 400px; }
+.tile-col {
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+  width: 48px; margin: 0 3px;
+  transition: width 650ms cubic-bezier(.2, .7, .2, 1), margin 650ms cubic-bezier(.2, .7, .2, 1), opacity 400ms;
+}
+.tile-col[data-collapsed] { width: 0; margin: 0; opacity: 0; }
+.tile {
+  display: flex; align-items: center; justify-content: center; width: 48px; height: 56px;
+  border: 1px solid var(--line); border-radius: 2px;
+  font-family: var(--font-display); font-weight: 700; font-size: 40px; line-height: 1; color: var(--ink);
+  transition: transform 420ms cubic-bezier(.45, 0, .55, 1), border-color 500ms, background-color 500ms, color 500ms;
+}
+.tile[data-turned] { transform: rotateX(90deg); }
+/* An added or changed letter: the same orchid treatment as the editor. */
+.tile[data-hl] { border-color: var(--accent); border-bottom-width: 3px; background: var(--tint); color: var(--accent); }
+.tile-word {
+  font-family: var(--font-body); font-variant: small-caps; letter-spacing: 0.08em;
+  font-size: 12px; font-weight: 400; color: var(--ink-soft); white-space: nowrap; transition: opacity 260ms;
+}
+.tile-word[data-quiet] { opacity: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .tile-col, .tile, .tile-word { transition: none; }
+}

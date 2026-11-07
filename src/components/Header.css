@@ -1,0 +1,5 @@
+.header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 36px; }
+.header .back {
+  display: flex; align-items: center; gap: 6px; min-height: 44px;
+  font-size: 15px; text-decoration: none; color: var(--link);
+}

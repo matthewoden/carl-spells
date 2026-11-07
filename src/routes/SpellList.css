@@ -1,0 +1,74 @@
+/* /spells. Numbers follow the list mock (frame 3): text controls, compact sticky bar,
+   right-edge jump strip. */
+.spell-list { --bar-h: 52px; }
+/* Lining figures wherever "PF2E" is set in Cormorant, so the 2 stands full height. */
+.spell-list h1 { margin: 6px 0 12px; font-family: var(--font-display); font-weight: 700; font-size: 40px; line-height: 1.05; font-variant-numeric: lining-nums; }
+.sl-count { margin: 8px 0 0; font-style: italic; font-size: 15px; color: var(--ink-soft); }
+
+.sl-controls { display: flex; flex-direction: column; }
+.choices { display: flex; align-items: center; gap: 10px; min-height: 40px; }
+.choices-k { width: 72px; flex: none; font-size: 13px; color: var(--ink-soft); }
+.choices-o { display: flex; align-items: center; flex-wrap: wrap; }
+.choice-wrap { display: inline-flex; align-items: center; }
+.choices-dot { margin: 0 8px; color: var(--rule); }
+.choice {
+  min-height: 40px; padding: 0 2px; background: none; border: 0; cursor: pointer;
+  font-family: var(--font-body); font-style: italic; font-size: 16px; color: var(--ink-soft);
+}
+.choice[aria-checked="true"] {
+  color: var(--ink); text-decoration: underline; text-decoration-color: var(--line);
+  text-underline-offset: 5px; text-decoration-thickness: 1px;
+}
+.choice:not([aria-checked="true"]):hover { color: var(--ink); }
+.spell-list .double-rule { margin: 10px 0 4px; }
+
+.sl-group { scroll-margin-top: calc(env(safe-area-inset-top) + var(--bar-h) + 4px); }
+.sl-gh { display: flex; align-items: center; gap: 12px; margin: 22px 0 2px; font-weight: inherit; }
+.sl-gt { font-family: var(--font-display); font-weight: 700; font-size: 30px; line-height: 1; }
+.sl-gt.small { font-size: 24px; }
+.sl-hair { flex: 1; height: 1px; background: var(--rule); }
+.sl-orn { width: 14px; height: 14px; }
+.sl-gc { font-variant: small-caps; letter-spacing: 0.08em; font-size: 12px; color: var(--ink-soft); font-family: var(--font-body); }
+
+.sl-rows { list-style: none; margin: 0; padding: 0 20px 0 0; }
+/* Two lines: the name, then the full spell line beneath it. Nothing is abbreviated. */
+.sl-row {
+  display: flex; flex-direction: column; gap: 1px;
+  min-height: 44px; padding: 9px 4px 10px; border-bottom: 1px solid var(--rule); text-decoration: none; color: var(--ink);
+}
+.sl-row:hover, .sl-row:focus-visible { background: var(--hover); }
+.sl-name { font-family: var(--font-display); font-weight: 600; font-size: 22px; line-height: 1.15; min-width: 0; }
+.sl-meta { font-size: 13px; letter-spacing: 0.06em; color: var(--ink-soft); }
+
+/* Compact bar: slides in once the title is gone. */
+.sl-bar {
+  position: fixed; top: 0; left: 50%; z-index: 5; width: 100%; max-width: 480px; transform: translate(-50%, -100%);
+  display: flex; justify-content: space-between; align-items: center; gap: 12px;
+  height: calc(env(safe-area-inset-top) + var(--bar-h));
+  padding: env(safe-area-inset-top) calc(env(safe-area-inset-right) + 24px) 0 calc(env(safe-area-inset-left) + 24px);
+  background: var(--page); border: 0; border-bottom: 1px solid var(--rule); color: inherit; font: inherit; text-align: left; cursor: pointer;
+  transition: transform 220ms ease-out;
+}
+.sl-bar:hover .sl-bar-title, .sl-bar:focus-visible .sl-bar-title { text-decoration: underline; text-decoration-color: var(--line); text-underline-offset: 4px; }
+.sl-bar:focus-visible { outline: 1px solid var(--line); outline-offset: -3px; }
+.sl-bar[data-show] { transform: translate(-50%, 0); }
+.sl-bar-title { color: var(--ink); font-family: var(--font-display); font-weight: 700; font-size: 22px; line-height: 1; font-variant-numeric: lining-nums; }
+.sl-bar-sum { font-size: 12px; letter-spacing: 0.08em; color: var(--ink-soft); }
+
+/* Jump strip: pinned to the right edge of the page column, not the window. */
+.sl-strip {
+  position: fixed; z-index: 4;
+  right: max(calc(env(safe-area-inset-right) + 2px), calc((100vw - 480px) / 2 + 2px));
+  top: calc(env(safe-area-inset-top) + var(--bar-h) + 12px); bottom: calc(env(safe-area-inset-bottom) + 16px);
+  width: 24px; display: flex; flex-direction: column; justify-content: center; align-items: stretch;
+  touch-action: none; user-select: none; -webkit-user-select: none;
+}
+.sl-strip a {
+  /* 24px targets (WCAG 2.2 target size) where the screen is tall enough; they only shrink on
+     short landscape screens, where scrolling the list does the same job. */
+  flex: 0 1 24px; display: flex; align-items: center; justify-content: center; min-height: 14px;
+  font-family: var(--font-display); font-weight: 600; font-size: 11px; font-variant-numeric: lining-nums;
+  color: var(--ink-soft); text-decoration: none;
+}
+.sl-strip a:hover, .sl-strip a:focus-visible { color: var(--ink); }
+@media (prefers-reduced-motion: reduce) { .sl-bar { transition: none; } }

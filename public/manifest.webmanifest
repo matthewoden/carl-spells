@@ -1,0 +1,13 @@
+{
+  "name": "CARL · Change, Add, Remove Letters",
+  "short_name": "CARL",
+  "description": "Change, add, or remove one letter of a spell name, and pass it around the table.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#120C18",
+  "theme_color": "#120C18",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png" }
+  ]
+}
