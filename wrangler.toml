@@ -19,10 +19,10 @@ run_worker_first = ["/s/*", "/og/*"]
 [observability]
 enabled = true
 
-# Rendered preview images, 30-day TTL. No id: wrangler provisions it on first deploy
-# (and a local one for `wrangler dev`), then writes the id back here.
+# Rendered preview images, 30-day TTL. `wrangler dev` uses a local copy.
 [[kv_namespaces]]
 binding = "OG"
+id = "c987fd6fd26e4231a4a94e7fc79f8a60" # "carl-og", created by the first deploy
 
 # Fresh preview renders (the only CPU-heavy work) per client IP. Cached and stored
 # images are never limited, so crawlers that share IPs aren't penalised. Approximate,
