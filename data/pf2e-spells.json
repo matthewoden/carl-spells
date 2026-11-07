@@ -1,0 +1,4580 @@
+{
+  "source": "foundryvtt/pf2e@2528e47d7f042c19d4c2caffcdb76820d3a44424",
+  "license": "ORC License (Paizo Inc.)",
+  "books": [
+    "Pathfinder Player Core",
+    "Pathfinder Player Core 2"
+  ],
+  "attribution": [
+    "Pathfinder Player Core © 2023, Paizo Inc.; Designers: Logan Bonner, Jason Bulmahn, Stephen Radney-MacFarland, and Mark Seifter. Authors: Alexander Augunas, Kate Baker, Logan Bonner, Jason Bulmahn, Carlos Cabrera, Calder CaDavid, James Case, Eleanor Ferron, Steven Hammond, Joan Hong, Vanessa Hoskins, James Jacobs, Jenny Jarzabski, Erik Keith, Dustin Knight, Lyz Liddell, Luis Loza, Patchen Mortimer, Dennis Muldoon, Stephen Radney-MacFarland, Mikhail Rekun, David N. Ross, Michael Sayre, Mark Seifter, Kendra Leigh, Speedling, Mark Thompson, Clark Valentine, Andrew White, Landon Winkler, and Linda Zayas-Palmer",
+    "Pathfinder Player Core 2 © 2024, Paizo Inc.; Authors: Amirali Attar Olyaee, Alexander Augunas, Brian Bauman, Joshua Birdsong, Logan Bonner, Jason Bulmahn, James Case, Jessica Catalan, John Compton, Paris Crenshaw, Jesse Decker, Eleanor Ferron, Fabby Garza Marroquín, Steven Hammond, Sasha Laranoa Harving, Joan Hong, Nicolas Hornyak, Vanessa Hoskins, James Jacobs, Jason Keeley, Dustin Knight, Avi Kool, Lyz Liddell, Nicolas Logue, Luis Loza, Ron Lundeen, Patchen Mortimer, Stephen Radney‑MacFarland, Jessica Redekop, Mikhail Rekun, Alex Riggs, David N. Ross, Michael Sayre, Mark Seifter, Owen K.C. Stephens, Jason Tondro, Clark Valentine, Andrew White, Landon Winkler, and Tonya Woldridge."
+  ],
+  "count": 408,
+  "spells": [
+    {
+      "slug": "acid-grip",
+      "name": "Acid Grip",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "aerial-form",
+      "name": "Aerial Form",
+      "rank": 4,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "air-bubble",
+      "name": "Air Bubble",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "divine",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "alarm",
+      "name": "Alarm",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "animal-form",
+      "name": "Animal Form",
+      "rank": 2,
+      "traditions": [
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "animal-messenger",
+      "name": "Animal Messenger",
+      "rank": 2,
+      "traditions": [
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "animal-vision",
+      "name": "Animal Vision",
+      "rank": 3,
+      "traditions": [
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "animated-assault",
+      "name": "Animated Assault",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "anointed-ground",
+      "name": "Anointed Ground",
+      "rank": 3,
+      "traditions": [
+        "divine"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "ant-haul",
+      "name": "Ant Haul",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "aqueous-orb",
+      "name": "Aqueous Orb",
+      "rank": 3,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "arctic-rift",
+      "name": "Arctic Rift",
+      "rank": 8,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "augury",
+      "name": "Augury",
+      "rank": 2,
+      "traditions": [
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "avatar",
+      "name": "Avatar",
+      "rank": 10,
+      "traditions": [
+        "divine"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "bane",
+      "name": "Bane",
+      "rank": 1,
+      "traditions": [
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "banishment",
+      "name": "Banishment",
+      "rank": 5,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "bestial-curse",
+      "name": "Bestial Curse",
+      "rank": 4,
+      "traditions": [
+        "arcane",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "bind-undead",
+      "name": "Bind Undead",
+      "rank": 3,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "blanket-of-stars",
+      "name": "Blanket of Stars",
+      "rank": 6,
+      "traditions": [
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "blazing-bolt",
+      "name": "Blazing Bolt",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "bless",
+      "name": "Bless",
+      "rank": 1,
+      "traditions": [
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "blessed-boundary",
+      "name": "Blessed Boundary",
+      "rank": 6,
+      "traditions": [
+        "divine"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "blinding-fury",
+      "name": "Blinding Fury",
+      "rank": 6,
+      "traditions": [
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "blindness",
+      "name": "Blindness",
+      "rank": 3,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "blister",
+      "name": "Blister",
+      "rank": 5,
+      "traditions": [
+        "arcane",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "blistering-invective",
+      "name": "Blistering Invective",
+      "rank": 2,
+      "traditions": [
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "blood-vendetta",
+      "name": "Blood Vendetta",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "blur",
+      "name": "Blur",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "breath-of-life",
+      "name": "Breath of Life",
+      "rank": 5,
+      "traditions": [
+        "divine"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "breathe-fire",
+      "name": "Breathe Fire",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "bullhorn",
+      "name": "Bullhorn",
+      "rank": 0,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "calm",
+      "name": "Calm",
+      "rank": 2,
+      "traditions": [
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "canticle-of-everlasting-grief",
+      "name": "Canticle of Everlasting Grief",
+      "rank": 8,
+      "traditions": [
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "carryall",
+      "name": "Carryall",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "cataclysm",
+      "name": "Cataclysm",
+      "rank": 10,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "caustic-blast",
+      "name": "Caustic Blast",
+      "rank": 0,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "chain-lightning",
+      "name": "Chain Lightning",
+      "rank": 6,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "chameleon-coat",
+      "name": "Chameleon Coat",
+      "rank": 5,
+      "traditions": [
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "charitable-urge",
+      "name": "Charitable Urge",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "charm",
+      "name": "Charm",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "chilling-darkness",
+      "name": "Chilling Darkness",
+      "rank": 3,
+      "traditions": [
+        "divine"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "chilling-spray",
+      "name": "Chilling Spray",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "chroma-leach",
+      "name": "Chroma Leach",
+      "rank": 4,
+      "traditions": [
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "clairaudience",
+      "name": "Clairaudience",
+      "rank": 3,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "clairvoyance",
+      "name": "Clairvoyance",
+      "rank": 4,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "cleanse-affliction",
+      "name": "Cleanse Affliction",
+      "rank": 2,
+      "traditions": [
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "cleanse-cuisine",
+      "name": "Cleanse Cuisine",
+      "rank": 1,
+      "traditions": [
+        "divine",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "clear-mind",
+      "name": "Clear Mind",
+      "rank": 2,
+      "traditions": [
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "cloak-of-colors",
+      "name": "Cloak of Colors",
+      "rank": 5,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "collective-transposition",
+      "name": "Collective Transposition",
+      "rank": 6,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "command",
+      "name": "Command",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "concordant-choir",
+      "name": "Concordant Choir",
+      "rank": 1,
+      "traditions": [
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "confusing-colors",
+      "name": "Confusing Colors",
+      "rank": 8,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "confusion",
+      "name": "Confusion",
+      "rank": 4,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "containment",
+      "name": "Containment",
+      "rank": 4,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "contingency",
+      "name": "Contingency",
+      "rank": 7,
+      "traditions": [
+        "arcane"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "control-water",
+      "name": "Control Water",
+      "rank": 5,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "corrosive-muck",
+      "name": "Corrosive Muck",
+      "rank": 5,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "countless-eyes",
+      "name": "Countless Eyes",
+      "rank": 4,
+      "traditions": [
+        "arcane",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "cozy-cabin",
+      "name": "Cozy Cabin",
+      "rank": 3,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "crashing-wave",
+      "name": "Crashing Wave",
+      "rank": 3,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "create-food",
+      "name": "Create Food",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "divine",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "create-water",
+      "name": "Create Water",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "divine",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "creation",
+      "name": "Creation",
+      "rank": 4,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "crisis-of-faith",
+      "name": "Crisis of Faith",
+      "rank": 3,
+      "traditions": [
+        "divine"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "curse-of-lost-time",
+      "name": "Curse of Lost Time",
+      "rank": 3,
+      "traditions": [
+        "arcane",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "cursed-metamorphosis",
+      "name": "Cursed Metamorphosis",
+      "rank": 6,
+      "traditions": [
+        "arcane",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "darkness",
+      "name": "Darkness",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "darkvision",
+      "name": "Darkvision",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "daze",
+      "name": "Daze",
+      "rank": 0,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "deafness",
+      "name": "Deafness",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "deja-vu",
+      "name": "Déjà Vu",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "desiccate",
+      "name": "Desiccate",
+      "rank": 8,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "detect-magic",
+      "name": "Detect Magic",
+      "rank": 0,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "detect-poison",
+      "name": "Detect Poison",
+      "rank": 1,
+      "traditions": [
+        "divine",
+        "primal"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "detect-scrying",
+      "name": "Detect Scrying",
+      "rank": 4,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "detonate-magic",
+      "name": "Detonate Magic",
+      "rank": 9,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "dinosaur-form",
+      "name": "Dinosaur Form",
+      "rank": 4,
+      "traditions": [
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "disappearance",
+      "name": "Disappearance",
+      "rank": 8,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "disguise-magic",
+      "name": "Disguise Magic",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "disintegrate",
+      "name": "Disintegrate",
+      "rank": 6,
+      "traditions": [
+        "arcane"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "dismantle",
+      "name": "Dismantle",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "dispel-magic",
+      "name": "Dispel Magic",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "dispelling-globe",
+      "name": "Dispelling Globe",
+      "rank": 4,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "divine-decree",
+      "name": "Divine Decree",
+      "rank": 7,
+      "traditions": [
+        "divine"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "divine-immolation",
+      "name": "Divine Immolation",
+      "rank": 5,
+      "traditions": [
+        "divine"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "divine-inspiration",
+      "name": "Divine Inspiration",
+      "rank": 8,
+      "traditions": [
+        "divine"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "divine-lance",
+      "name": "Divine Lance",
+      "rank": 0,
+      "traditions": [
+        "divine"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "divine-wrath",
+      "name": "Divine Wrath",
+      "rank": 4,
+      "traditions": [
+        "divine"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "dizzying-colors",
+      "name": "Dizzying Colors",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "dominate",
+      "name": "Dominate",
+      "rank": 6,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "dragon-form",
+      "name": "Dragon Form",
+      "rank": 6,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "dream-council",
+      "name": "Dream Council",
+      "rank": 8,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "dream-message",
+      "name": "Dream Message",
+      "rank": 3,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "dreaming-potential",
+      "name": "Dreaming Potential",
+      "rank": 5,
+      "traditions": [
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "drop-dead",
+      "name": "Drop Dead",
+      "rank": 5,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "dull-ambition",
+      "name": "Dull Ambition",
+      "rank": 4,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "duplicate-foe",
+      "name": "Duplicate Foe",
+      "rank": 7,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "earthbind",
+      "name": "Earthbind",
+      "rank": 3,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "earthquake",
+      "name": "Earthquake",
+      "rank": 8,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "eclipse-burst",
+      "name": "Eclipse Burst",
+      "rank": 7,
+      "traditions": [
+        "arcane",
+        "divine",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "electric-arc",
+      "name": "Electric Arc",
+      "rank": 0,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "elemental-form",
+      "name": "Elemental Form",
+      "rank": 5,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "embed-message",
+      "name": "Embed Message",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "energy-aegis",
+      "name": "Energy Aegis",
+      "rank": 7,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "enfeeble",
+      "name": "Enfeeble",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "enlarge",
+      "name": "Enlarge",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "entangling-flora",
+      "name": "Entangling Flora",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "enthrall",
+      "name": "Enthrall",
+      "rank": 3,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "environmental-endurance",
+      "name": "Environmental Endurance",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "divine",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "everlight",
+      "name": "Everlight",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "execute",
+      "name": "Execute",
+      "rank": 7,
+      "traditions": [
+        "divine",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "fabricated-truth",
+      "name": "Fabricated Truth",
+      "rank": 10,
+      "traditions": [
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "falling-stars",
+      "name": "Falling Stars",
+      "rank": 9,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "false-vision",
+      "name": "False Vision",
+      "rank": 5,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "false-vitality",
+      "name": "False Vitality",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "familiars-face",
+      "name": "Familiar’s Face",
+      "rank": 3,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "fear",
+      "name": "Fear",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "feet-to-fins",
+      "name": "Feet to Fins",
+      "rank": 3,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "field-of-life",
+      "name": "Field of Life",
+      "rank": 6,
+      "traditions": [
+        "divine",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "fiery-body",
+      "name": "Fiery Body",
+      "rank": 7,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "figment",
+      "name": "Figment",
+      "rank": 0,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "final-sacrifice",
+      "name": "Final Sacrifice",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "fire-shield",
+      "name": "Fire Shield",
+      "rank": 4,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "fireball",
+      "name": "Fireball",
+      "rank": 3,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "fleet-step",
+      "name": "Fleet Step",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "flicker",
+      "name": "Flicker",
+      "rank": 4,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "floating-flame",
+      "name": "Floating Flame",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "fly",
+      "name": "Fly",
+      "rank": 4,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "forbidding-ward",
+      "name": "Forbidding Ward",
+      "rank": 0,
+      "traditions": [
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "force-barrage",
+      "name": "Force Barrage",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "foresight",
+      "name": "Foresight",
+      "rank": 9,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "freeze-time",
+      "name": "Freeze Time",
+      "rank": 10,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "frostbite",
+      "name": "Frostbite",
+      "rank": 0,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "fungal-infestation",
+      "name": "Fungal Infestation",
+      "rank": 2,
+      "traditions": [
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "gale-blast",
+      "name": "Gale Blast",
+      "rank": 0,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "gate",
+      "name": "Gate",
+      "rank": 10,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "gecko-grip",
+      "name": "Gecko Grip",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "gentle-landing",
+      "name": "Gentle Landing",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "ghostly-carrier",
+      "name": "Ghostly Carrier",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "ghostly-tragedy",
+      "name": "Ghostly Tragedy",
+      "rank": 4,
+      "traditions": [
+        "divine",
+        "occult"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "ghostly-weapon",
+      "name": "Ghostly Weapon",
+      "rank": 3,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "ghoulish-cravings",
+      "name": "Ghoulish Cravings",
+      "rank": 2,
+      "traditions": [
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "goblin-pox",
+      "name": "Goblin Pox",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "gouging-claw",
+      "name": "Gouging Claw",
+      "rank": 0,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "gravity-well",
+      "name": "Gravity Well",
+      "rank": 3,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "grease",
+      "name": "Grease",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "grim-tendrils",
+      "name": "Grim Tendrils",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "grisly-growths",
+      "name": "Grisly Growths",
+      "rank": 5,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "guidance",
+      "name": "Guidance",
+      "rank": 0,
+      "traditions": [
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "gust-of-wind",
+      "name": "Gust of Wind",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "hallucination",
+      "name": "Hallucination",
+      "rank": 5,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "harm",
+      "name": "Harm",
+      "rank": 1,
+      "traditions": [
+        "divine"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "haste",
+      "name": "Haste",
+      "rank": 3,
+      "traditions": [
+        "arcane",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "haunting-hymn",
+      "name": "Haunting Hymn",
+      "rank": 0,
+      "traditions": [
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "heal",
+      "name": "Heal",
+      "rank": 1,
+      "traditions": [
+        "divine",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "heroism",
+      "name": "Heroism",
+      "rank": 3,
+      "traditions": [
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "holy-cascade",
+      "name": "Holy Cascade",
+      "rank": 4,
+      "traditions": [
+        "divine"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "holy-light",
+      "name": "Holy Light",
+      "rank": 3,
+      "traditions": [
+        "divine",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "honeyed-words",
+      "name": "Honeyed Words",
+      "rank": 4,
+      "traditions": [
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "howling-blizzard",
+      "name": "Howling Blizzard",
+      "rank": 5,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "humanoid-form",
+      "name": "Humanoid Form",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "hydraulic-push",
+      "name": "Hydraulic Push",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "hydraulic-torrent",
+      "name": "Hydraulic Torrent",
+      "rank": 4,
+      "traditions": [
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "hypercognition",
+      "name": "Hypercognition",
+      "rank": 3,
+      "traditions": [
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "hypnotize",
+      "name": "Hypnotize",
+      "rank": 3,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "ice-storm",
+      "name": "Ice Storm",
+      "rank": 4,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "ignition",
+      "name": "Ignition",
+      "rank": 0,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "ill-omen",
+      "name": "Ill Omen",
+      "rank": 1,
+      "traditions": [
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "illusory-creature",
+      "name": "Illusory Creature",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "illusory-disguise",
+      "name": "Illusory Disguise",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "illusory-object",
+      "name": "Illusory Object",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "illusory-scene",
+      "name": "Illusory Scene",
+      "rank": 5,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "imaginary-lockbox",
+      "name": "Imaginary Lockbox",
+      "rank": 5,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "impaling-spike",
+      "name": "Impaling Spike",
+      "rank": 5,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "implosion",
+      "name": "Implosion",
+      "rank": 9,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "imprint-message",
+      "name": "Imprint Message",
+      "rank": 1,
+      "traditions": [
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "indestructibility",
+      "name": "Indestructibility",
+      "rank": 10,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "infuse-vitality",
+      "name": "Infuse Vitality",
+      "rank": 1,
+      "traditions": [
+        "divine"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "insect-form",
+      "name": "Insect Form",
+      "rank": 3,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "interplanar-teleport",
+      "name": "Interplanar Teleport",
+      "rank": 7,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "invisibility",
+      "name": "Invisibility",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "invisible-item",
+      "name": "Invisible Item",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "invoke-spirits",
+      "name": "Invoke Spirits",
+      "rank": 5,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "item-facade",
+      "name": "Item Facade",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "jump",
+      "name": "Jump",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "knock",
+      "name": "Knock",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "know-the-way",
+      "name": "Know the Way",
+      "rank": 0,
+      "traditions": [
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "laughing-fit",
+      "name": "Laughing Fit",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "leaden-steps",
+      "name": "Leaden Steps",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "levitate",
+      "name": "Levitate",
+      "rank": 3,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "lifewood-cage",
+      "name": "Lifewood Cage",
+      "rank": 7,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "light",
+      "name": "Light",
+      "rank": 0,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "lightning-bolt",
+      "name": "Lightning Bolt",
+      "rank": 3,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "lightning-storm",
+      "name": "Lightning Storm",
+      "rank": 5,
+      "traditions": [
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "liminal-doorway",
+      "name": "Liminal Doorway",
+      "rank": 4,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "live-wire",
+      "name": "Live Wire",
+      "rank": 0,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "locate",
+      "name": "Locate",
+      "rank": 3,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "lock",
+      "name": "Lock",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "mad-monkeys",
+      "name": "Mad Monkeys",
+      "rank": 3,
+      "traditions": [
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "magic-passage",
+      "name": "Magic Passage",
+      "rank": 5,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "manifestation",
+      "name": "Manifestation",
+      "rank": 10,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "mariners-curse",
+      "name": "Mariner’s Curse",
+      "rank": 5,
+      "traditions": [
+        "arcane",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "marvelous-mount",
+      "name": "Marvelous Mount",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "mask-of-terror",
+      "name": "Mask of Terror",
+      "rank": 7,
+      "traditions": [
+        "arcane",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "massacre",
+      "name": "Massacre",
+      "rank": 9,
+      "traditions": [
+        "arcane",
+        "divine",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "mending",
+      "name": "Mending",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "message",
+      "name": "Message",
+      "rank": 0,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "metamorphosis",
+      "name": "Metamorphosis",
+      "rank": 9,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "migration",
+      "name": "Migration",
+      "rank": 8,
+      "traditions": [
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "mind-probe",
+      "name": "Mind Probe",
+      "rank": 5,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "mind-reading",
+      "name": "Mind Reading",
+      "rank": 3,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "mindlink",
+      "name": "Mindlink",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "mirage",
+      "name": "Mirage",
+      "rank": 4,
+      "traditions": [
+        "arcane",
+        "occult",
+        "primal"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "mislead",
+      "name": "Mislead",
+      "rank": 6,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "mist",
+      "name": "Mist",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "moment-of-renewal",
+      "name": "Moment of Renewal",
+      "rank": 8,
+      "traditions": [
+        "divine",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "monstrosity-form",
+      "name": "Monstrosity Form",
+      "rank": 8,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "moon-frenzy",
+      "name": "Moon Frenzy",
+      "rank": 5,
+      "traditions": [
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "mountain-resilience",
+      "name": "Mountain Resilience",
+      "rank": 4,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "mud-pit",
+      "name": "Mud Pit",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "mystic-armor",
+      "name": "Mystic Armor",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "nature-incarnate",
+      "name": "Nature Incarnate",
+      "rank": 10,
+      "traditions": [
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "natures-enmity",
+      "name": "Nature’s Enmity",
+      "rank": 9,
+      "traditions": [
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "natures-pathway",
+      "name": "Nature’s Pathway",
+      "rank": 5,
+      "traditions": [
+        "primal"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "never-mind",
+      "name": "Never Mind",
+      "rank": 6,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "nightmare",
+      "name": "Nightmare",
+      "rank": 4,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "noise-blast",
+      "name": "Noise Blast",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "noxious-vapors",
+      "name": "Noxious Vapors",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "oaken-resilience",
+      "name": "Oaken Resilience",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "object-reading",
+      "name": "Object Reading",
+      "rank": 1,
+      "traditions": [
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "one-with-plants",
+      "name": "One with Plants",
+      "rank": 2,
+      "traditions": [
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "one-with-stone",
+      "name": "One with Stone",
+      "rank": 3,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "outcasts-curse",
+      "name": "Outcast’s Curse",
+      "rank": 4,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "overwhelming-presence",
+      "name": "Overwhelming Presence",
+      "rank": 9,
+      "traditions": [
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "paralyze",
+      "name": "Paralyze",
+      "rank": 3,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "paranoia",
+      "name": "Paranoia",
+      "rank": 2,
+      "traditions": [
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "peaceful-bubble",
+      "name": "Peaceful Bubble",
+      "rank": 4,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "peaceful-rest",
+      "name": "Peaceful Rest",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "pest-form",
+      "name": "Pest Form",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "pet-cache",
+      "name": "Pet Cache",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "petrify",
+      "name": "Petrify",
+      "rank": 6,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "phantasmagoria",
+      "name": "Phantasmagoria",
+      "rank": 9,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "phantasmal-calamity",
+      "name": "Phantasmal Calamity",
+      "rank": 6,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "phantasmal-minion",
+      "name": "Phantasmal Minion",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "phantasmal-treasure",
+      "name": "Phantasmal Treasure",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "phantom-pain",
+      "name": "Phantom Pain",
+      "rank": 1,
+      "traditions": [
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "pinpoint",
+      "name": "Pinpoint",
+      "rank": 8,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "planar-palace",
+      "name": "Planar Palace",
+      "rank": 7,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "planar-seal",
+      "name": "Planar Seal",
+      "rank": 7,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "planar-tether",
+      "name": "Planar Tether",
+      "rank": 4,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "plant-form",
+      "name": "Plant Form",
+      "rank": 5,
+      "traditions": [
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "possession",
+      "name": "Possession",
+      "rank": 7,
+      "traditions": [
+        "occult"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "prestidigitation",
+      "name": "Prestidigitation",
+      "rank": 0,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "primal-herd",
+      "name": "Primal Herd",
+      "rank": 10,
+      "traditions": [
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "project-image",
+      "name": "Project Image",
+      "rank": 7,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "protection",
+      "name": "Protection",
+      "rank": 1,
+      "traditions": [
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "protector-tree",
+      "name": "Protector Tree",
+      "rank": 1,
+      "traditions": [
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "puff-of-poison",
+      "name": "Puff of Poison",
+      "rank": 0,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "pummeling-rubble",
+      "name": "Pummeling Rubble",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "punishing-winds",
+      "name": "Punishing Winds",
+      "rank": 8,
+      "traditions": [
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "quandary",
+      "name": "Quandary",
+      "rank": 8,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "raise-dead",
+      "name": "Raise Dead",
+      "rank": 6,
+      "traditions": [
+        "divine"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "read-aura",
+      "name": "Read Aura",
+      "rank": 0,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "read-omens",
+      "name": "Read Omens",
+      "rank": 4,
+      "traditions": [
+        "divine",
+        "occult"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "reapers-lantern",
+      "name": "Reaper’s Lantern",
+      "rank": 2,
+      "traditions": [
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "regenerate",
+      "name": "Regenerate",
+      "rank": 7,
+      "traditions": [
+        "divine",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "remake",
+      "name": "Remake",
+      "rank": 10,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "repulsion",
+      "name": "Repulsion",
+      "rank": 6,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "resist-energy",
+      "name": "Resist Energy",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "resplendent-mansion",
+      "name": "Resplendent Mansion",
+      "rank": 9,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "retrocognition",
+      "name": "Retrocognition",
+      "rank": 7,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "revealing-light",
+      "name": "Revealing Light",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "revival",
+      "name": "Revival",
+      "rank": 10,
+      "traditions": [
+        "divine",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "rewrite-memory",
+      "name": "Rewrite Memory",
+      "rank": 4,
+      "traditions": [
+        "occult"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "ring-of-truth",
+      "name": "Ring of Truth",
+      "rank": 3,
+      "traditions": [
+        "divine",
+        "occult"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "rouse-skeletons",
+      "name": "Rouse Skeletons",
+      "rank": 3,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "runic-body",
+      "name": "Runic Body",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "runic-weapon",
+      "name": "Runic Weapon",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "sacred-form",
+      "name": "Sacred Form",
+      "rank": 6,
+      "traditions": [
+        "divine"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "safe-passage",
+      "name": "Safe Passage",
+      "rank": 3,
+      "traditions": [
+        "arcane",
+        "divine",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "sanctuary",
+      "name": "Sanctuary",
+      "rank": 1,
+      "traditions": [
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "scatter-scree",
+      "name": "Scatter Scree",
+      "rank": 0,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "schadenfreude",
+      "name": "Schadenfreude",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "scintillating-safeguard",
+      "name": "Scintillating Safeguard",
+      "rank": 6,
+      "traditions": [
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "scouting-eye",
+      "name": "Scouting Eye",
+      "rank": 5,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "scrying",
+      "name": "Scrying",
+      "rank": 6,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "seal-fate",
+      "name": "Seal Fate",
+      "rank": 4,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "see-the-unseen",
+      "name": "See the Unseen",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "seize-soul",
+      "name": "Seize Soul",
+      "rank": 9,
+      "traditions": [
+        "divine",
+        "occult"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "sending",
+      "name": "Sending",
+      "rank": 5,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "shadow-blast",
+      "name": "Shadow Blast",
+      "rank": 5,
+      "traditions": [
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "shape-stone",
+      "name": "Shape Stone",
+      "rank": 4,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "shape-wood",
+      "name": "Shape Wood",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "share-life",
+      "name": "Share Life",
+      "rank": 2,
+      "traditions": [
+        "divine"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "shared-invisibility",
+      "name": "Shared Invisibility",
+      "rank": 3,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "shatter",
+      "name": "Shatter",
+      "rank": 2,
+      "traditions": [
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "shield",
+      "name": "Shield",
+      "rank": 0,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "shrink",
+      "name": "Shrink",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "shrink-item",
+      "name": "Shrink Item",
+      "rank": 3,
+      "traditions": [
+        "arcane"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "sigil",
+      "name": "Sigil",
+      "rank": 0,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "silence",
+      "name": "Silence",
+      "rank": 2,
+      "traditions": [
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "sleep",
+      "name": "Sleep",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "slither",
+      "name": "Slither",
+      "rank": 5,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "slow",
+      "name": "Slow",
+      "rank": 3,
+      "traditions": [
+        "arcane",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "soothe",
+      "name": "Soothe",
+      "rank": 1,
+      "traditions": [
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "sound-body",
+      "name": "Sound Body",
+      "rank": 2,
+      "traditions": [
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "speak-with-animals",
+      "name": "Speak with Animals",
+      "rank": 2,
+      "traditions": [
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "speak-with-plants",
+      "name": "Speak with Plants",
+      "rank": 3,
+      "traditions": [
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "speak-with-stones",
+      "name": "Speak with Stones",
+      "rank": 5,
+      "traditions": [
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "spell-riposte",
+      "name": "Spell Riposte",
+      "rank": 7,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "spellwrack",
+      "name": "Spellwrack",
+      "rank": 6,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "spider-sting",
+      "name": "Spider Sting",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "spirit-blast",
+      "name": "Spirit Blast",
+      "rank": 6,
+      "traditions": [
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "spirit-link",
+      "name": "Spirit Link",
+      "rank": 1,
+      "traditions": [
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "spirit-sense",
+      "name": "Spirit Sense",
+      "rank": 2,
+      "traditions": [
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "spirit-song",
+      "name": "Spirit Song",
+      "rank": 8,
+      "traditions": [
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "spiritual-armament",
+      "name": "Spiritual Armament",
+      "rank": 2,
+      "traditions": [
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "spiritual-epidemic",
+      "name": "Spiritual Epidemic",
+      "rank": 8,
+      "traditions": [
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "spiritual-guardian",
+      "name": "Spiritual Guardian",
+      "rank": 5,
+      "traditions": [
+        "divine"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "spout",
+      "name": "Spout",
+      "rank": 0,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "stabilize",
+      "name": "Stabilize",
+      "rank": 0,
+      "traditions": [
+        "divine",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "status",
+      "name": "Status",
+      "rank": 2,
+      "traditions": [
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "strange-geometry",
+      "name": "Strange Geometry",
+      "rank": 5,
+      "traditions": [
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "stupefy",
+      "name": "Stupefy",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "subconscious-suggestion",
+      "name": "Subconscious Suggestion",
+      "rank": 5,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "sudden-blight",
+      "name": "Sudden Blight",
+      "rank": 2,
+      "traditions": [
+        "divine",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "suggestion",
+      "name": "Suggestion",
+      "rank": 4,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "summon-animal",
+      "name": "Summon Animal",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "summon-celestial",
+      "name": "Summon Celestial",
+      "rank": 5,
+      "traditions": [
+        "divine"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "summon-construct",
+      "name": "Summon Construct",
+      "rank": 1,
+      "traditions": [
+        "arcane"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "summon-dragon",
+      "name": "Summon Dragon",
+      "rank": 5,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "summon-elemental",
+      "name": "Summon Elemental",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "summon-entity",
+      "name": "Summon Entity",
+      "rank": 5,
+      "traditions": [
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "summon-fey",
+      "name": "Summon Fey",
+      "rank": 1,
+      "traditions": [
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "summon-fiend",
+      "name": "Summon Fiend",
+      "rank": 5,
+      "traditions": [
+        "divine"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "summon-giant",
+      "name": "Summon Giant",
+      "rank": 5,
+      "traditions": [
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "summon-instrument",
+      "name": "Summon Instrument",
+      "rank": 0,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "summon-lesser-servitor",
+      "name": "Summon Lesser Servitor",
+      "rank": 1,
+      "traditions": [
+        "divine"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "summon-monitor",
+      "name": "Summon Monitor",
+      "rank": 5,
+      "traditions": [
+        "divine"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "summon-plant-or-fungus",
+      "name": "Summon Plant or Fungus",
+      "rank": 1,
+      "traditions": [
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "summon-undead",
+      "name": "Summon Undead",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "sunburst",
+      "name": "Sunburst",
+      "rank": 7,
+      "traditions": [
+        "divine",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "sure-footing",
+      "name": "Sure Footing",
+      "rank": 2,
+      "traditions": [
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "sure-strike",
+      "name": "Sure Strike",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "synaptic-pulse",
+      "name": "Synaptic Pulse",
+      "rank": 5,
+      "traditions": [
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "synesthesia",
+      "name": "Synesthesia",
+      "rank": 5,
+      "traditions": [
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "tailwind",
+      "name": "Tailwind",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "talking-corpse",
+      "name": "Talking Corpse",
+      "rank": 4,
+      "traditions": [
+        "divine",
+        "occult"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "tangle-vine",
+      "name": "Tangle Vine",
+      "rank": 0,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "tangling-creepers",
+      "name": "Tangling Creepers",
+      "rank": 6,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "telekinetic-hand",
+      "name": "Telekinetic Hand",
+      "rank": 0,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "telekinetic-haul",
+      "name": "Telekinetic Haul",
+      "rank": 5,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "telekinetic-maneuver",
+      "name": "Telekinetic Maneuver",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "telekinetic-projectile",
+      "name": "Telekinetic Projectile",
+      "rank": 0,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "telepathic-demand",
+      "name": "Telepathic Demand",
+      "rank": 9,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "telepathy",
+      "name": "Telepathy",
+      "rank": 4,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "teleport",
+      "name": "Teleport",
+      "rank": 6,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "thoughtful-gift",
+      "name": "Thoughtful Gift",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "threefold-aspect",
+      "name": "Threefold Aspect",
+      "rank": 3,
+      "traditions": [
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "thunderstrike",
+      "name": "Thunderstrike",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "toxic-cloud",
+      "name": "Toxic Cloud",
+      "rank": 5,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "translate",
+      "name": "Translate",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "translocate",
+      "name": "Translocate",
+      "rank": 4,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "tree-of-seasons",
+      "name": "Tree of Seasons",
+      "rank": 6,
+      "traditions": [
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "true-target",
+      "name": "True Target",
+      "rank": 7,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "truesight",
+      "name": "Truesight",
+      "rank": 6,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "truespeech",
+      "name": "Truespeech",
+      "rank": 5,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "umbral-journey",
+      "name": "Umbral Journey",
+      "rank": 5,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "uncontrollable-dance",
+      "name": "Uncontrollable Dance",
+      "rank": 8,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "unfathomable-song",
+      "name": "Unfathomable Song",
+      "rank": 9,
+      "traditions": [
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "unfettered-movement",
+      "name": "Unfettered Movement",
+      "rank": 4,
+      "traditions": [
+        "arcane",
+        "divine",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "unfettered-pack",
+      "name": "Unfettered Pack",
+      "rank": 7,
+      "traditions": [
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "unrelenting-observation",
+      "name": "Unrelenting Observation",
+      "rank": 8,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "vampiric-exsanguination",
+      "name": "Vampiric Exsanguination",
+      "rank": 6,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "vampiric-feast",
+      "name": "Vampiric Feast",
+      "rank": 3,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "vampiric-maiden",
+      "name": "Vampiric Maiden",
+      "rank": 4,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "vanishing-tracks",
+      "name": "Vanishing Tracks",
+      "rank": 1,
+      "traditions": [
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "vapor-form",
+      "name": "Vapor Form",
+      "rank": 4,
+      "traditions": [
+        "arcane",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "veil-of-privacy",
+      "name": "Veil of Privacy",
+      "rank": 3,
+      "traditions": [
+        "arcane",
+        "occult",
+        "primal"
+      ],
+      "rarity": "uncommon",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "ventriloquism",
+      "name": "Ventriloquism",
+      "rank": 1,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "vibrant-pattern",
+      "name": "Vibrant Pattern",
+      "rank": 6,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "vision-of-death",
+      "name": "Vision of Death",
+      "rank": 4,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "visions-of-danger",
+      "name": "Visions of Danger",
+      "rank": 7,
+      "traditions": [
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "vital-beacon",
+      "name": "Vital Beacon",
+      "rank": 4,
+      "traditions": [
+        "divine",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "vitality-lash",
+      "name": "Vitality Lash",
+      "rank": 0,
+      "traditions": [
+        "divine",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "void-warp",
+      "name": "Void Warp",
+      "rank": 0,
+      "traditions": [
+        "arcane",
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "volcanic-eruption",
+      "name": "Volcanic Eruption",
+      "rank": 7,
+      "traditions": [
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "vomit-swarm",
+      "name": "Vomit Swarm",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "wails-of-the-damned",
+      "name": "Wails of the Damned",
+      "rank": 9,
+      "traditions": [
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "wall-of-fire",
+      "name": "Wall of Fire",
+      "rank": 4,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "wall-of-flesh",
+      "name": "Wall of Flesh",
+      "rank": 5,
+      "traditions": [
+        "divine",
+        "occult",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "wall-of-force",
+      "name": "Wall of Force",
+      "rank": 6,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "wall-of-ice",
+      "name": "Wall of Ice",
+      "rank": 5,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "wall-of-stone",
+      "name": "Wall of Stone",
+      "rank": 5,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "wall-of-thorns",
+      "name": "Wall of Thorns",
+      "rank": 3,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "wall-of-wind",
+      "name": "Wall of Wind",
+      "rank": 3,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "wanderers-guide",
+      "name": "Wanderer’s Guide",
+      "rank": 3,
+      "traditions": [
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "warp-mind",
+      "name": "Warp Mind",
+      "rank": 7,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "water-breathing",
+      "name": "Water Breathing",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "divine",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "water-walk",
+      "name": "Water Walk",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "divine",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "wave-of-despair",
+      "name": "Wave of Despair",
+      "rank": 5,
+      "traditions": [
+        "arcane",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "weapon-of-judgment",
+      "name": "Weapon of Judgment",
+      "rank": 9,
+      "traditions": [
+        "divine"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "weapon-storm",
+      "name": "Weapon Storm",
+      "rank": 4,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "web",
+      "name": "Web",
+      "rank": 2,
+      "traditions": [
+        "arcane",
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "whispers-of-the-void",
+      "name": "Whispers of the Void",
+      "rank": 4,
+      "traditions": [
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core 2"
+    },
+    {
+      "slug": "wrathful-storm",
+      "name": "Wrathful Storm",
+      "rank": 9,
+      "traditions": [
+        "primal"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    },
+    {
+      "slug": "zealous-conviction",
+      "name": "Zealous Conviction",
+      "rank": 6,
+      "traditions": [
+        "divine",
+        "occult"
+      ],
+      "rarity": "common",
+      "book": "Pathfinder Player Core"
+    }
+  ]
+}
