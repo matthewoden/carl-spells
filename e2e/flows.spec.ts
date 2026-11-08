@@ -184,6 +184,17 @@ test.describe('sharing on a desktop', () => {
 test.describe('sharing on a phone', () => {
   test.use({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true });
 
+  test('a long one-word name shrinks to one line instead of wrapping', async ({ page }) => {
+    await page.goto('/spell/thaumaturgy');
+    await page.evaluate(() => document.fonts.ready);
+    const lines = await page.locator('.mirror').evaluate((m) => {
+      const r = document.createRange();
+      r.selectNodeContents(m.firstChild!);
+      return r.getClientRects().length;
+    });
+    expect(lines).toBe(1);
+  });
+
   test('Share hands the share sheet the link alone', async ({ page }) => {
     await page.goto('/spell/fireball?name=fireballs');
     await page.evaluate(() => {

@@ -2,7 +2,7 @@
 // word fits the width and a greedy word wrap needs at most three lines.
 
 export const MAX_SIZE = 58;
-const MIN_SIZE = 24;
+export const MIN_SIZE = 24;
 const MAX_LINES = 3;
 const TRACKING = -0.01; // em, matches letter-spacing on the field
 
