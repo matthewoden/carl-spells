@@ -201,3 +201,23 @@ group('spell list', async () => {
     expect(findSpell('fireball')!.detail).toBe('Evocation');
   });
 });
+
+group('casing in share links', () => {
+  const forcecage = findSpell('forcecage')!;
+  it("keeps the player's capitals when title-casing would lose them", () => {
+    expect(sharePath(forcecage, 'ForceMage')).toBe('/s/forcecage/ForceMage');
+    expect(parseJoke('forcecage', 'ForceMage')!.name).toBe('ForceMage');
+    expect(parseJoke('forcecage', 'ForceMage')!.status).toBe('one letter changed');
+    expect(nameFromSlug('FIREBALLS', 'Fireball')).toBe('FIREBALLS');
+  });
+  it('leaves ordinary links lowercase', () => {
+    expect(sharePath(findSpell('fireball')!, 'Fireballs')).toBe('/s/fireball/fireballs');
+    expect(sharePath(findSpell('hunters-mark')!, 'Hunter’s Mask')).toBe('/s/hunters-mark/hunters-mask');
+    expect(sharePath(findSpell('protection-from-evil-and-good')!, 'Protection from Evil and Food')).toBe(
+      '/s/protection-from-evil-and-good/protection-from-evil-and-food',
+    );
+  });
+  it('still reads old lowercase links the same way', () => {
+    expect(parseJoke('forcecage', 'forcemage')!.name).toBe('Forcemage');
+  });
+});

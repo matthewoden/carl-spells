@@ -105,6 +105,20 @@ test.describe('share page and preview image', () => {
     expect([buf.readUInt32BE(16), buf.readUInt32BE(20)]).toEqual([600, 315]);
   });
 
+  test("the player's capitals survive sharing", async ({ page, request }) => {
+    await page.goto('/spell/forcecage');
+    const field = page.locator('#name');
+    await field.fill('ForceMage');
+    // The editor's links carry the casing...
+    await expect(page.getByRole('link', { name: 'Show my screen' })).toHaveAttribute('href', '/screen/forcecage/ForceMage');
+    const html = await (await request.get('/s/forcecage/ForceMage')).text();
+    expect(html).toContain('<title>ForceMage · CARL</title>');
+    expect((await request.get('/og/forcecage/ForceMage.png')).status()).toBe(200);
+    // ...and the share page shows it.
+    await page.goto('/s/forcecage/ForceMage');
+    await expect(page.locator('.share-name')).toHaveText('ForceMage');
+  });
+
   test('bad links are 404s, never rendered', async ({ request }) => {
     expect((await request.get('/s/not-a-spell/x')).status()).toBe(404);
     expect((await request.get('/og/fireball/%3Cb%3E.png')).status()).toBe(404);

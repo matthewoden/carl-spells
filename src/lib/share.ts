@@ -1,6 +1,6 @@
 // Everything the share page, the preview card and the Worker agree on about one joke.
 import { describe, diff } from './diff';
-import { isNameSlug, nameFromSlug, slugify } from './slug';
+import { isNameSlug, nameFromSlug, slugify, slugifyCased } from './slug';
 import { findSpell, gameQuery, isGame, type Spell } from './spells';
 
 /** Bump to re-render every preview image after a card design change. */
@@ -24,9 +24,13 @@ export function parseJoke(spellSlug: string, nameSlug: string, g?: string | null
   return { spell, nameSlug, name, status: describe(diff(spell.name, name)).toLowerCase() };
 }
 
-/** Slug for the joke segment; falls back to the spell's own slug if the name won't fit. */
+/** Slug for the joke segment; falls back to the spell's own slug if the name won't fit.
+ *  Lowercase unless the player's capitals would be lost ("ForceMage" stays "ForceMage"),
+ *  so ordinary links look the same as before. */
 export function nameSlugFor(spell: Spell, name: string): string {
-  const slug = slugify(name);
+  const lower = slugify(name);
+  const cased = slugifyCased(name);
+  const slug = nameFromSlug(lower, spell.name) === nameFromSlug(cased, spell.name) ? lower : cased;
   return isNameSlug(slug) ? slug : spell.slug;
 }
 

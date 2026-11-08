@@ -28,7 +28,7 @@ export async function handleOg(request: Request, env: OgEnv, ctx: ExecutionConte
     return new Response('Method not allowed', { status: 405, headers: { Allow: 'GET, HEAD' } });
   }
   const url = new URL(request.url);
-  const m = /^\/og\/([a-z0-9-]+)\/([a-z0-9'-]+)\.png$/.exec(url.pathname);
+  const m = /^\/og\/([a-z0-9-]+)\/([A-Za-z0-9'-]+)\.png$/.exec(url.pathname);
   const joke = m && parseJoke(m[1], m[2], url.searchParams.get('g'));
   if (!joke) return new Response('Not found', { status: 404 });
 
